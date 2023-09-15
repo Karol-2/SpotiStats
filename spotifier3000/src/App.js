@@ -1,14 +1,14 @@
 import './App.css';
+import NavBar from './components/NavBar';
+import TopArtists from './components/TopArtists';
+import TopSongs from './components/TopSongs';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-      sup bitches
-      <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-      </header>
+      <NavBar> </NavBar>
+      <TopSongs></TopSongs>
+      <TopArtists></TopArtists>
     </div>
   );
 }
