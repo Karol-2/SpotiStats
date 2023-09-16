@@ -3,7 +3,6 @@ import { TokenContext } from "../contexts/TokenContext";
 
 function WelcomeMessage() {
   const [profile, setProfile] = useState(null);
-  
   const token = useContext(TokenContext)
 
   if (token) {
@@ -26,31 +25,38 @@ function WelcomeMessage() {
 
 
     return (
-      <div>
+      <div className=' p-5 md:mx-40 min-w-600 rounded-md flex justify-center'>   
       {profile ? (
         <div>
-          <h1 id="displayName">{profile.display_name}</h1>
+          <p className="text-3xl font-extrabold flex justify-center">WELCOME</p>
+          <div className="flex flex-row-reverse bg-my-dark rounded-full p-5  m-2 font-bold justify-around"> 
+          <a 
+            href={profile.external_urls.spotify}
+            id="displayName"
+            className=" place-self-center m-3 text-3xl text-my-green" >
+              {profile.display_name}</a>
           {profile.images[0] && (
-            <div>
+            
               <img
                 id="avatar"
                 src={profile.images[0].url}
                 alt="Profile Avatar"
-                width="200"
-                height="200"
+                width="50"
+                height="50"
+                className=" place-self-center rounded-full border-2 border-my-green"
               />
-            </div>
+           
           )}
-          <p id="id">{profile.id}</p>
-          <p id="email">{profile.email}</p>
-          <p id="uri">
-            <a href={profile.external_urls.spotify}>{profile.uri}</a>
-          </p>
+
+          </div>
+          
+          
           
         </div>
       ) : (
-        <div>
-          <p>Oczekiwanie na token....</p>
+        <div className=" text-center">
+          <p className="text-5xl">Welcome to SpotiStats!</p>
+          <p className="text-2xl">Please login to your spotify account</p>
           
         </div>
         
