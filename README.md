@@ -8,5 +8,5 @@ Features checklist:
 - [X]  downloading top 50 songs from last 12 months and count most popular generes
 - [X]  recomendactions (playlist)
 - [ ]  creating playlist with your most listened ever songs
-- [ ]  heatmap with most listened artists
-- [ ]  deploy on heroku
+- [ ]  a chart that shows artists and their popularity, it shows how many artists do you listen in each bracketsof popoularity
+- [ ]  deploy online
