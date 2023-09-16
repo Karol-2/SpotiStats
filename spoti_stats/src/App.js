@@ -1,4 +1,4 @@
-import './App.css';
+import Genres from './components/Genres';
 import NavBar from './components/NavBar';
 import TopArtists from './components/TopArtists';
 import TopSongs from './components/TopSongs';
@@ -47,6 +47,7 @@ function App() {
         <WelcomeMessage ></WelcomeMessage>
         <TopArtists></TopArtists>
         <TopSongs></TopSongs>
+        <Genres ></Genres>
       </div>
     </TokenContext.Provider>
   );
