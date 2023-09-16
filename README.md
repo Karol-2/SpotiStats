@@ -1,4 +1,4 @@
-# Spotifier3000
+# SpotiStats
 A React App that works with Spotify API and gives statistics and such.
 Project made with Tailwind.
 

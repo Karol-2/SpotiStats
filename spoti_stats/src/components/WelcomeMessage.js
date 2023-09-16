@@ -1,5 +1,30 @@
-// TODO: użyj use context do przechowywania tokenu
-function WelcomeMessage({profile}) {
+import { useContext, useState } from "react";
+import { TokenContext } from "../contexts/TokenContext";
+
+function WelcomeMessage() {
+  const [profile, setProfile] = useState(null);
+  
+  const token = useContext(TokenContext)
+
+  if (token) {
+    setProfileIfToken(token)
+  }
+
+  async function setProfileIfToken(token){
+    const profile = await fetchProfile(token);
+    setProfile(profile);
+  }
+
+  async function fetchProfile(token) {
+    const result = await fetch("https://api.spotify.com/v1/me", {
+      method: "GET",
+      headers: { Authorization: `Bearer ${token}` }
+    });
+
+    return await result.json();
+  }
+
+
     return (
       <div>
       {profile ? (
