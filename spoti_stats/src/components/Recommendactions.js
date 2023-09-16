@@ -4,22 +4,20 @@ import getUris from "../helper/getUris";
 import fetchWebApi from "../helper/fetchWebApi";
 function Recommendactions() {
   const [recommendations, setRecommendactions] = useState(null);
+  const [playlistCreated, setPlaylistCreated] = useState(false)
   const token = useContext(TokenContext);
-  const topTracksIds = [
-    "5qIHFdkW6phMsTZlN2g8Lc",
-    "0V3wPSX9ygBnCm8psDIegu",
-    "1BxfuPKGuaTgP7aM0Bbdwr",
-    "3YdH5OPiQQt39x7MpgOwUT",
-    "0ug5NqcwcFR2xrfTkc7k8e",
-  ];
-  // TODO: change toptracksid to fetch
-
+ 
   if (recommendations === null && token) {
     setRecomIfToken(token);
   }
-
   async function setRecomIfToken(token) {
     if (token) {
+        const allFiveSongs = await fetchWebApi(token,"me/top/tracks?time_range=short_term&limit=5")
+        const topTracksIds = []
+        allFiveSongs.items.forEach(song => {
+            topTracksIds.push(song.id)
+        });
+
       const res = await fetchWebApi(
         token,
         `recommendations?limit=30&seed_tracks=${topTracksIds.join(",")}`,
@@ -45,9 +43,9 @@ function Recommendactions() {
       `users/${user_id}/playlists`,
       "POST",
       {
-        name: "SpotiStats recommendactions",
+        name: "Check Those Out!",
         description:
-          "Playlist created by the tutorial on developer.spotify.com",
+          "Playlist of recommended songs based on your recent favourite tracks. xoxo SpotiStats",
         public: false,
       }
     );
@@ -75,14 +73,18 @@ function Recommendactions() {
             );
           })}
         <p>And many others!</p>
-        <button
-          className="bg-my-blue"
-          onClick={() => {
-            iniciatePlaylist();
-          }}
-        >
-          Create a playlist with my recommendations!
-        </button>
+        {!playlistCreated && (
+             <button
+             className="bg-my-blue"
+             onClick={() => {
+               iniciatePlaylist(); setPlaylistCreated(true)
+             }}
+           >
+             Create a playlist with my recommendations!
+           </button>
+        )}
+       
+        
       </div>
     )
   );

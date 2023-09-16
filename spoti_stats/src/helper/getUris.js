@@ -3,7 +3,6 @@ function getUris(recommendations) {
     recommendations.forEach((obj) => {
       tracksUri.push(obj.uri);
     });
-    console.log(tracksUri);
     return tracksUri;
   }
 
