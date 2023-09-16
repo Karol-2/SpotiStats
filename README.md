@@ -4,7 +4,7 @@ Project made with Tailwind.
 
 Features checklist:
 
-- [ ]  show top 50, 25, 20, 15, 10, 5 songs and artists in the context of the last 1, 6 or 12 months
+- [X]  show top 50, 25, 10, 5 songs and artists in the context of the last 1, 6 or 12 months
 - [ ]  downloading top 50 songs from last 12 months and count most popular generes
 - [ ]  heatmap with most listened artists
 - [ ]  showing saved songs and albums
