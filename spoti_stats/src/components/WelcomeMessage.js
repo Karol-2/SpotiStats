@@ -10,9 +10,10 @@ function WelcomeMessage() {
   }
 
   async function setProfileIfToken(token) {
-    if (profile===null){const profile = await fetchProfile(token);
-      setProfile(profile);}
-    
+    if (profile === null) {
+      const profile = await fetchProfile(token);
+      setProfile(profile);
+    }
   }
 
   async function fetchProfile(token) {
