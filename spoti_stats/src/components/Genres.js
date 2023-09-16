@@ -53,7 +53,7 @@ function Genres() {
               {genresMedium &&
                 genresMedium.map((val, key) => {
                   return (
-                    <li>
+                    <li id={key}>
                       {" "}
                       {key + 1}. {val[0]} - {val[1]}
                     </li>
@@ -68,7 +68,7 @@ function Genres() {
               {genresLong &&
                 genresLong.map((val, key) => {
                   return (
-                    <li>
+                    <li id={key}>
                       {" "}
                       {key + 1}. {val[0]} - {val[1]}
                     </li>
