@@ -44,33 +44,45 @@ function Genres() {
   }
   return (
     token && (
-      <div className="bg-my-blue p-5 md:mx-40 min-w-600 rounded-md">
-        <p className="text-3xl font-extrabold">Genres</p>
-        <div className="flex">
-          <div className="w-1/2 p-4">
-            <p>Top genres from last year</p>
+      <div className="bg-my-blue p-5 md:mx-40 min-w-600">
+        <p className="text-4xl font-semibold mb-5 text-center">GENRES</p>
+        <div className="flex text-center">
+          <div className="w-1/2 p-4 bg-my-dark rounded-2xl">
+            <p className="text-2xl font-semibold text-my-green">
+              Top genres from last year
+            </p>
+            <hr className=" mt-3 mb-3 border-my-red"></hr>
             <ul>
               {genresMedium &&
                 genresMedium.map((val, key) => {
                   return (
-                    <li id={key}>
+                    <li
+                      id={key}
+                      className=" odd:text-my-red even:text-my-green font-semibold text-xl"
+                    >
                       {" "}
-                      {key + 1}. {val[0]} - {val[1]}
+                      {key + 1}. {val[0]} ({val[1]})
                     </li>
                   );
                 })}
             </ul>
           </div>
 
-          <div className="w-1/2 p-4">
-            <p>Top genres of all time</p>
+          <div className="w-1/2 p-4 bg-my-green rounded-2xl">
+            <p className="text-2xl font-semibold text-my-dark">
+              Top genres of all time
+            </p>
+            <hr className=" mt-3 mb-3"></hr>
             <ul>
               {genresLong &&
                 genresLong.map((val, key) => {
                   return (
-                    <li id={key}>
+                    <li
+                      id={key}
+                      className=" odd:text-my-dark even:text-my-red font-semibold text-xl"
+                    >
                       {" "}
-                      {key + 1}. {val[0]} - {val[1]}
+                      {key + 1}. {val[0]} ({val[1]})
                     </li>
                   );
                 })}

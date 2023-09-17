@@ -44,7 +44,7 @@ function TopArtists() {
             <p className="text-4xl font-semibold mb-5">TOP TRACKS</p>
             <div className="flex justify-center flex-col">
               <p className=" text-xl mb-2"> Select a number of artists:</p>
-              <div className="flex flex-row space-x-4 p-1 self-center">
+              <div className="flex flex-row space-x-4 p-1 self-center flex-wrap">
                 <label className="inline-flex items-center  bg-my-dark rounded-full p-2 text-my-light">
                   <input
                     type="radio"
@@ -94,7 +94,7 @@ function TopArtists() {
                 </label>
               </div>
               <p className=" text-xl mb-2 mt-5"> Select a period of time:</p>
-              <div className="flex flex-row space-x-4 p-1 self-center">
+              <div className="flex flex-row space-x-4 p-1 self-center flex-wrap">
                 <label className="inline-flex items-center space-x-2 bg-my-dark rounded-full p-2 text-my-light">
                   <input
                     type="radio"
