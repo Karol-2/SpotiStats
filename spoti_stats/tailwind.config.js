@@ -10,7 +10,6 @@ module.exports = {
     colors: {
       "my-blue": "#0079FF",
       "my-red": " #E24480",
-      "my-yellow": "#F6FA70",
       "my-green": "#00DFA2",
       "my-dark":"#21262D",
       "my-darker":"#121519",

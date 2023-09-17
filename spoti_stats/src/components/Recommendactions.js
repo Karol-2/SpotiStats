@@ -76,7 +76,7 @@ function Recommendactions() {
               {recommendations &&
                 recommendations.slice(0, 5).map((val, key) => {
                   return (
-                    <li className="flex align-bottom mt-3">
+                    <div className="flex align-bottom mt-3" id={key} key={key}>
                       <span className="text-6xl self-middle text-my-green">
                         {key + 1}.
                       </span>{" "}
@@ -91,7 +91,7 @@ function Recommendactions() {
                         </a>{" "}
                         <p className=" text-lg">{val.artists[0].name}</p>
                       </div>
-                    </li>
+                    </div>
                   );
                 })}
             </ol>

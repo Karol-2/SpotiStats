@@ -7,7 +7,7 @@ const Playlist = ({ songs }) => {
       {songs &&
         songs.map((song, key) => {
           return (
-            <div className="flex flex-row align-bottom flex-wrap even:bg-my-dark odd:bg-my-darker round-md">
+            <div className="flex flex-row align-bottom flex-wrap even:bg-my-dark odd:bg-my-darker round-md" id={key} key={key}>
               <div className="flex flex-row justify-between min-w-full ">
                 <p className="text-lg self-middle text-my-green font-semibold">
                   {key + 1}.

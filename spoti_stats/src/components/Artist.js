@@ -3,7 +3,10 @@ function Artist(props) {
   const index = props.index;
 
   return (
-    <div className=" bg-my-dark rounded-2xl p-4 flex flex-col opacity-0 animate-fade-in justify-center text-center transition-transform transform hover:scale-110">
+    <div
+      id={index}
+      className=" bg-my-dark rounded-2xl p-4 flex flex-col opacity-0 animate-fade-in justify-center text-center transition-transform transform hover:scale-110"
+    >
       {profile.images[0] && (
         <img
           id="avatar"

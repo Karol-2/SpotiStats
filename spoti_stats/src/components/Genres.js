@@ -56,13 +56,14 @@ function Genres() {
               {genresMedium &&
                 genresMedium.map((val, key) => {
                   return (
-                    <li
+                    <div
                       id={key}
+                      key={key}
                       className=" odd:text-my-red even:text-my-green font-semibold text-xl"
                     >
                       {" "}
                       {key + 1}. {val[0]} ({val[1]})
-                    </li>
+                    </div>
                   );
                 })}
             </ul>
@@ -77,13 +78,14 @@ function Genres() {
               {genresLong &&
                 genresLong.map((val, key) => {
                   return (
-                    <li
+                    <div
                       id={key}
+                      key={key}
                       className=" odd:text-my-dark even:text-my-red font-semibold text-xl"
                     >
                       {" "}
                       {key + 1}. {val[0]} ({val[1]})
-                    </li>
+                    </div>
                   );
                 })}
             </ul>
