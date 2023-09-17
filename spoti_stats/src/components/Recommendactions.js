@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import { TokenContext } from "../contexts/TokenContext";
 import getUris from "../helper/getUris";
 import fetchWebApi from "../helper/fetchWebApi";
+import Playlist from "./Playlist";
 function Recommendactions() {
   const [recommendations, setRecommendactions] = useState(null);
   const [playlistCreated, setPlaylistCreated] = useState(false);
@@ -64,29 +65,55 @@ function Recommendactions() {
 
   return (
     token && (
-      <div className="bg-my-red p-5 md:mx-40 min-w-600 rounded-md">
-        <p className="text-3xl font-extrabold">RECOMMENDACTIONS</p>
-        <p>Based on your recent listening:</p>
-        {recommendations &&
-          recommendations.slice(0, 5).map((val, key) => {
-            return (
-              <li>
-                {val.name} - {val.artists[0].name}
-              </li>
-            );
-          })}
-        <p>And many others!</p>
-        {!playlistCreated && (
-          <button
-            className="bg-my-blue"
-            onClick={() => {
-              iniciatePlaylist();
-              setPlaylistCreated(true);
-            }}
-          >
-            Create a playlist with my recommendations!
-          </button>
-        )}
+      <div className="bg-my-red p-5 md:mx-40 min-w-600 ">
+        <p className="text-4xl font-semibold mb-5">RECOMMENDACTIONS</p>
+        <div className="flex justify-around">
+          <div>
+            <p className="  text-2xl">
+              Here are 5 tracks based on your recent listening:
+            </p>
+            <ol>
+              {recommendations &&
+                recommendations.slice(0, 5).map((val, key) => {
+                  return (
+                    <li className="flex align-bottom mt-3">
+                      <span className="text-6xl self-middle text-my-green">
+                        {key + 1}.
+                      </span>{" "}
+                      <div>
+                        <a
+                          className="text-2xl text-my-green font-bold"
+                          href={val.external_urls.spotify}
+                          target="_blank"
+                          rel="noreferrer noopener"
+                        >
+                          {val.name}
+                        </a>{" "}
+                        <p className=" text-lg">{val.artists[0].name}</p>
+                      </div>
+                    </li>
+                  );
+                })}
+            </ol>
+          </div>
+
+          <div className="flex flex-col content-between space-y-3">
+            <div className="bg-my-dark p-3 rounded-xl">
+              <Playlist songs={recommendations}></Playlist>
+            </div>
+            {!playlistCreated && (
+              <button
+                className=" p-3 rounded-full bg-my-dark font-bold text-my-green hover:bg-my-darker border-2 mr-8 ml-8"
+                onClick={() => {
+                  iniciatePlaylist();
+                  setPlaylistCreated(true);
+                }}
+              >
+                Create a playlist with my recommendations!
+              </button>
+            )}
+          </div>
+        </div>
       </div>
     )
   );
