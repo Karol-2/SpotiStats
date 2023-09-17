@@ -4,12 +4,17 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
+    fontFamily: {
+      'serif': ['Georgia', 'Cambria', 'serif'],
+    },
     colors: {
       "my-blue": "#0079FF",
-      "my-red": " #FF0060",
+      "my-red": " #E24480",
       "my-yellow": "#F6FA70",
       "my-green": "#00DFA2",
       "my-dark":"#21262D",
+      "my-darker":"#121519",
+      "my-light":"EDE9E9",
 
     },
     extend: {},

@@ -1,5 +1,5 @@
 import Genres from "./components/Genres";
-import NavBar from "./components/NavBar";
+import LoginPanel from "./components/LoginPanel";
 import PopularityTaste from "./components/PopularityTaste";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import Recommendactions from "./components/Recommendactions";
@@ -46,7 +46,7 @@ function App() {
   return (
     <TokenContext.Provider value={accessToken}>
       <div className="App">
-        <NavBar clientId={clientId}> </NavBar>
+        <LoginPanel clientId={clientId}> </LoginPanel>
         <WelcomeMessage></WelcomeMessage>
         <TopArtists></TopArtists>
         <TopSongs></TopSongs>
