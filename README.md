@@ -15,6 +15,6 @@ Features checklist:
 - [ ]  responsive page for mobiles
 - [ ]  darkmode
 - [ ]  logo
-- [ ]  icons
-- [ ]  recommendaction refresh button
-- [ ]  change scrollbar
+- [X]  icons
+- [X]  recommendaction refresh button
+- [X]  change scrollbar

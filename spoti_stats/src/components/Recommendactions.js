@@ -3,6 +3,10 @@ import { TokenContext } from "../contexts/TokenContext";
 import getUris from "../helper/getUris";
 import fetchWebApi from "../helper/fetchWebApi";
 import Playlist from "./Playlist";
+import { faRefresh, faArrowCircleRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+
 function Recommendactions() {
   const [recommendations, setRecommendactions] = useState(null);
   const [playlistCreated, setPlaylistCreated] = useState(false);
@@ -109,9 +113,18 @@ function Recommendactions() {
                   setPlaylistCreated(true);
                 }}
               >
-                Create a playlist with my recommendations!
+                Create a playlist
+                <FontAwesomeIcon icon={faArrowCircleRight} />
               </button>
             )}
+            <button
+              className=" p-3 rounded-full bg-my-dark font-bold text-my-green hover:bg-my-darker border-2 mr-32 ml-32"
+              onClick={() => {
+                setRecomIfToken(token);
+              }}
+            >
+              Refresh <FontAwesomeIcon icon={faRefresh} />
+            </button>
           </div>
         </div>
       </div>

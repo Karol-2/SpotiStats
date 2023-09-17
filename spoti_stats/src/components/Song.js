@@ -24,5 +24,4 @@ function Song({ song }) {
 }
 
 export default Song;
-//TODO: dodaj klikalność piosenek
 //TODO: napraw , w artystach
