@@ -1,5 +1,6 @@
 import Genres from "./components/Genres";
 import NavBar from "./components/NavBar";
+import PopularityTaste from "./components/PopularityTaste";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import Recommendactions from "./components/Recommendactions";
 import TopArtists from "./components/TopArtists";
@@ -51,6 +52,7 @@ function App() {
         <TopSongs></TopSongs>
         <Genres></Genres>
         <Recommendactions></Recommendactions>
+        <PopularityTaste></PopularityTaste>
         <PrivacyPolicy></PrivacyPolicy>
       </div>
     </TokenContext.Provider>
