@@ -12,9 +12,18 @@ function PrivacyPolicy() {
         it is NOT shared with any third parties. All information is used solely
         for displaying your data.
       </p>
-      <p><span>&copy;</span> <a href="https://github.com/Karol-2" target="_blank" rel="noreferrer noopener" >Karol Krawczykiewicz 2023 </a></p>
+      <p>
+        <span>&copy;</span>{" "}
+        <a
+          href="https://github.com/Karol-2"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          Karol Krawczykiewicz 2023{" "}
+        </a>
+      </p>
     </div>
   );
-} 
+}
 
 export default PrivacyPolicy;

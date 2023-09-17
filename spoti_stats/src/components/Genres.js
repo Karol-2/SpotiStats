@@ -44,7 +44,7 @@ function Genres() {
   }
   return (
     token && (
-      <div className="bg-my-blue p-5 md:mx-40 min-w-600">
+      <div className="bg-my-blue p-5 md:mx-40 min-w-600 shadow-2xl m-10 rounded-xl">
         <p className="text-4xl font-semibold mb-5 text-center">GENRES</p>
         <div className="flex text-center">
           <div className="w-1/2 p-4 bg-my-dark rounded-2xl">

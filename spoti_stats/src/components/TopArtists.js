@@ -32,7 +32,7 @@ function TopArtists() {
   }
   return (
     token && (
-      <div className="bg-my-red p-5 md:mx-40 min-w-600 ">
+      <div className="bg-my-red p-5 md:mx-40 min-w-600 shadow-2xl m-10 rounded-xl">
         <p className="text-4xl font-semibold mb-5">TOP ARTISTS</p>
         <div className="flex justify-between space-x-5">
           <div className="mb-8">

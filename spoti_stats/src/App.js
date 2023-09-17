@@ -45,8 +45,9 @@ function App() {
 
   return (
     <TokenContext.Provider value={accessToken}>
-      <div className="App">
-        <LoginPanel clientId={clientId}> </LoginPanel>
+      <div className="App"> 
+      <div className="background-animation">
+      <LoginPanel clientId={clientId}> </LoginPanel>
         <WelcomeMessage></WelcomeMessage>
         <TopArtists></TopArtists>
         <TopSongs></TopSongs>
@@ -54,6 +55,8 @@ function App() {
         <Recommendactions></Recommendactions>
         <PopularityTaste></PopularityTaste>
         <PrivacyPolicy></PrivacyPolicy>
+      </div>
+       
       </div>
     </TokenContext.Provider>
   );

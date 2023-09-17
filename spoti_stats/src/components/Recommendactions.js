@@ -65,7 +65,7 @@ function Recommendactions() {
 
   return (
     token && (
-      <div className="bg-my-red p-5 md:mx-40 min-w-600 ">
+      <div className="bg-my-red p-5 md:mx-40 min-w-600 shadow-2xl m-10 rounded-xl ">
         <p className="text-4xl font-semibold mb-5">RECOMMENDACTIONS</p>
         <div className="flex justify-around">
           <div>
