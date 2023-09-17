@@ -1,19 +1,6 @@
 function Song({ song }) {
   return (
-    <div className="flex flex-row-reverse bg-my-dark rounded-full p-5  m-2 font-bold justify-around">
-      <p className=" place-self-center m-3 text-1xl text-my-green">
-        {song.artists.map((val, key) => val.name + ",")}
-      </p>
-      <a
-        href={song.album.external_urls.spotify}
-        id="displayName"
-        className=" place-self-center m-3 text-1xl text-my-green"
-      >
-        {song.album.name}
-      </a>
-      <p className=" place-self-center m-3 text-xl text-my-green">
-        {song.name}
-      </p>
+    <div className="flex flex-row flex-wrap bg-my-dark rounded-2xl p-1 opacity-0 animate-fade-in m-1 font-semibold justify-between transition-transform transform hover:scale-110">
       {song.album.images[0] && (
         <img
           id="avatar"
@@ -21,11 +8,21 @@ function Song({ song }) {
           alt="Album Cover"
           width="50"
           height="50"
-          className=" place-self-center rounded-full border-2 border-my-green"
+          className=" place-self-center rounded-full border-2 border-my-green rotate-animation"
         />
       )}
+      <div className="flex flex-col text-right">
+        <p className=" place-self-center  text-xl text-my-green self-end">
+          {song.name}
+        </p>
+        <a className=" place-self-center text-sm text-my-green self-end" href="/">
+          {song.artists.map((val, key) => val.name + ",")}
+        </a>
+      </div>
     </div>
   );
 }
 
 export default Song;
+//TODO: dodaj klikalność
+//TODO: napraw , w artystach

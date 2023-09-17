@@ -10,10 +10,25 @@
       opacity: 1;
     }
   }
+
+  
   
   .animate-fade-in {
     animation: fadeIn 1s ease-in-out 0.5s 1 normal both;
   }
   .animate-fade-in-delayed {
     animation: fadeIn 1s ease-in-out 1.5s 2 normal both;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .rotate-animation {
+    animation: rotate 7s linear infinite;
   }

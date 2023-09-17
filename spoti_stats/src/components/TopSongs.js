@@ -11,98 +11,154 @@ function TopArtists() {
   const type = "tracks";
 
   const token = useContext(TokenContext);
- 
 
   async function setDataIfToken(token) {
-    if (token){
+    if (token) {
       const profile = await fetchTracks(token);
       setSongs(profile);
-    }else (console.log("token not found"))
-    
+    } else console.log("token not found");
   }
 
   async function fetchTracks(token) {
-    const result = await fetch(`https://api.spotify.com/v1/me/top/${type}?time_range=${period}&limit=${songsNumber}`, {
-      method: "GET",
-      headers: { Authorization: `Bearer ${token}` },
-    });
+    const result = await fetch(
+      `https://api.spotify.com/v1/me/top/${type}?time_range=${period}&limit=${songsNumber}`,
+      {
+        method: "GET",
+        headers: { Authorization: `Bearer ${token}` },
+      }
+    );
 
     return await result.json();
   }
-  return ( token &&(
-    <div className="bg-my-green p-5 md:mx-40 min-w-600 rounded-md">
-      <p className="text-3xl font-extrabold">TOP TRACKS</p>
-      <div className="flex justify-between flex-col font-bold">
-        <div className="flex flex-row justify-center space-x-4 p-1 ">
-          <button
-            onClick={() => setSongsNumber(5)}
-            className="border rounded border-my-yellow text-my-yellow font-bold w-7 h-7 text-base"
-          >
-            5
-          </button>
-          <button
-            onClick={() => setSongsNumber(10)}
-            className="border rounded border-my-yellow text-my-yellow font-bold w-7 h-7 text-base"
-          >
-            10
-          </button>
-          <button
-            onClick={() => setSongsNumber(25)}
-            className="border rounded border-my-yellow text-my-yellow font-bold w-7 h-7 text-base"
-          >
-            25
-          </button>
-          <button
-            onClick={() => setSongsNumber(50)}
-            className="border rounded border-my-yellow text-my-yellow font-bold w-7 h-7 text-base"
-          >
-            50
-          </button>
-        </div>
-        <div className="flex flex-row justify-center space-x-4 p-1">
-          <button
-            onClick={() => {
-              setPeriod("short_term");
-              setDisplayPeriod("from last month");
-            }}
-            className="border rounded border-my-yellow text-my-yellow font-bold text-base p-1"
-          >
-            1 Month
-          </button>
-          <button
-            onClick={() => {
-              setPeriod("medium_term");
-              setDisplayPeriod("from  6 months");
-            }}
-            className="border rounded border-my-yellow text-my-yellow font-bold text-base p-1"
-          >
-            6 Months
-          </button>
-          <button
-            onClick={() => {
-              setPeriod("long_term");
-              setDisplayPeriod("of all time");
-            }}
-            className="border rounded border-my-yellow text-my-yellow font-bold text-base p-1"
-          >
-            Of all time
-          </button>
+  return (
+    token && (
+      <div className="bg-my-green p-5 md:mx-40 min-w-600 ">
+        <div className="flex ">
+        <div className=" w-1/2 p-4">
+            {songs &&
+              songs.items.map((val, key) => {
+                return <Song song={val} id={key} key={key} />;
+              })}
+          </div>
+          <div className="mb-8 w-1/2 p-4 text-center">
+            <p className="text-4xl font-semibold mb-5">TOP TRACKS</p>
+            <div className="flex justify-center flex-col">
+              <p className=" text-xl mb-2"> Select a number of artists:</p>
+              <div className="flex flex-row space-x-4 p-1 self-center">
+                <label className="inline-flex items-center  bg-my-dark rounded-full p-2 text-my-light">
+                  <input
+                    type="radio"
+                    name="songsNumber"
+                    value="5"
+                    checked={songsNumber === 5}
+                    onChange={() => setSongsNumber(5)}
+                    className="border rounded border-my-darks text-my-red font-bold w-6 h-6 "
+                  />
+                  <span>5</span>
+                </label>
+
+                <label className="inline-flex items-center space-x-2 bg-my-dark rounded-full p-2 text-my-light">
+                  <input
+                    type="radio"
+                    name="songsNumber"
+                    value="10"
+                    checked={songsNumber === 10}
+                    onChange={() => setSongsNumber(10)}
+                    className="border rounded border-my-blue text-my-blue font-bold w-7 h-7 text-base"
+                  />
+                  <span>10</span>
+                </label>
+
+                <label className="inline-flex items-center space-x-2 bg-my-dark rounded-full p-2 text-my-light">
+                  <input
+                    type="radio"
+                    name="songsNumber"
+                    value="25"
+                    checked={songsNumber === 25}
+                    onChange={() => setSongsNumber(25)}
+                    className="border rounded border-my-blue text-my-blue font-bold w-7 h-7 text-base"
+                  />
+                  <span>25</span>
+                </label>
+
+                <label className="inline-flex items-center space-x-2 bg-my-dark rounded-full p-2 text-my-light">
+                  <input
+                    type="radio"
+                    name="songsNumber"
+                    value="50"
+                    checked={songsNumber === 50}
+                    onChange={() => setSongsNumber(50)}
+                    className="border rounded border-my-blue text-my-blue font-bold w-7 h-7 text-base"
+                  />
+                  <span>50</span>
+                </label>
+              </div>
+              <p className=" text-xl mb-2 mt-5"> Select a period of time:</p>
+              <div className="flex flex-row space-x-4 p-1 self-center">
+                <label className="inline-flex items-center space-x-2 bg-my-dark rounded-full p-2 text-my-light">
+                  <input
+                    type="radio"
+                    name="period"
+                    value="short_term"
+                    checked={period === "short_term"}
+                    onChange={() => {
+                      setPeriod("short_term");
+                      setDisplayPeriod("from last month");
+                    }}
+                    className="border rounded border-my-blue text-my-blue font-bold w-7 h-7 text-base"
+                  />
+                  <span>1 Month</span>
+                </label>
+
+                <label className="inline-flex items-center space-x-2 bg-my-dark rounded-full p-2 text-my-light">
+                  <input
+                    type="radio"
+                    name="period"
+                    value="medium_term"
+                    checked={period === "medium_term"}
+                    onChange={() => {
+                      setPeriod("medium_term");
+                      setDisplayPeriod("from 6 months");
+                    }}
+                    className="border rounded border-my-blue text-my-blue font-bold w-7 h-7 text-base"
+                  />
+                  <span>6 Months</span>
+                </label>
+
+                <label className="inline-flex items-center space-x-2 bg-my-dark rounded-full p-2 text-my-light">
+                  <input
+                    type="radio"
+                    name="period"
+                    value="long_term"
+                    checked={period === "long_term"}
+                    onChange={() => {
+                      setPeriod("long_term");
+                      setDisplayPeriod("of all time");
+                    }}
+                    className="border rounded border-my-blue text-my-blue font-bold w-7 h-7 text-base"
+                  />
+                  <span>Of all time</span>
+                </label>
+              </div>
+
+              <div className="flex justify-evenly flex-col p-5">
+                <p className="text-2xl font-semibold p-1 text-center">
+                  Show Top {songsNumber} tracks {displayPeriod}!
+                </p>
+                <button
+                  className=" p-3 rounded-full bg-my-dark font-bold text-my-green hover:bg-my-darker border-2"
+                  onClick={() => setDataIfToken(token)}
+                >
+                  Show {type}
+                </button>
+              </div>
+            </div>
+          </div>
+          
         </div>
       </div>
-      <p className="text-2xl font-bold p-1">
-        Show Top {songsNumber} tracks {displayPeriod}!
-      </p>
-      <button 
-      className=" p-3 border rounded-full bg-my-green font-bold text-my-yellow" 
-      onClick={()=>setDataIfToken(token)} 
-     >
-        Show top {type}
-      </button>
-      {songs && songs.items.map((val,key)=>{
-        return <Song song={val} id={key} key={key} />
-      })}
-    </div>
-  ))
+    )
+  );
 }
 
 export default TopArtists;
