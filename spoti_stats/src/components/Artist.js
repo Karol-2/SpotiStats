@@ -1,13 +1,10 @@
-function Artist({ profile }) {
+function Artist(props) {
+  const profile = props.profile
+  const index = props.index
+ console.log(profile)
   return (
-    <div className="flex flex-row-reverse bg-my-dark rounded-full p-5  m-2 font-bold justify-around">
-      <a
-        href={profile.external_urls.spotify}
-        id="displayName"
-        className=" place-self-center m-3 text-1xl text-my-green"
-      >
-        {profile.name}
-      </a>
+    <div className=' bg-my-dark rounded-2xl p-4 flex flex-col justify-center text-center'>
+      
       {profile.images[0] && (
         <img
           id="avatar"
@@ -15,9 +12,18 @@ function Artist({ profile }) {
           alt="Artist Avatar"
           width="50"
           height="50"
-          className=" place-self-center rounded-full border-2 border-my-green"
+          className=" rounded-full border-2 border-my-green self-center"
         />
       )}
+      <p className="font-bold text-my-green">{index+1}.</p>
+      <a
+        href={profile.external_urls.spotify}
+        id="displayName"
+        className=" text-my-green"
+      >
+        {profile.name}
+      </a>
+      
     </div>
   );
 }

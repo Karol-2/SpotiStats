@@ -30,7 +30,7 @@ function TopArtists() {
     return await result.json();
   }
   return ( token &&(
-    <div className="bg-my-blue p-5 md:mx-40 min-w-600 rounded-md">
+    <div className="bg-my-green p-5 md:mx-40 min-w-600 rounded-md">
       <p className="text-3xl font-extrabold">TOP TRACKS</p>
       <div className="flex justify-between flex-col font-bold">
         <div className="flex flex-row justify-center space-x-4 p-1 ">

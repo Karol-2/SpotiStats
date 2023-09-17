@@ -11,98 +11,149 @@ function TopArtists() {
   const type = "artists";
 
   const token = useContext(TokenContext);
- 
 
   async function setDataIfToken(token) {
-    if (token){
+    if (token) {
       const profile = await fetchArtists(token);
       setArtists(profile);
-    }else (console.log("token not found"))
-    
+    } else console.log("token not found");
   }
 
   async function fetchArtists(token) {
-    const result = await fetch(`https://api.spotify.com/v1/me/top/${type}?time_range=${period}&limit=${artistsNumber}`, {
-      method: "GET",
-      headers: { Authorization: `Bearer ${token}` },
-    });
+    const result = await fetch(
+      `https://api.spotify.com/v1/me/top/${type}?time_range=${period}&limit=${artistsNumber}`,
+      {
+        method: "GET",
+        headers: { Authorization: `Bearer ${token}` },
+      }
+    );
 
     return await result.json();
   }
-  return (token && (
-    <div className="bg-my-yellow p-5 md:mx-40 min-w-600 rounded-md">
-      <p className="text-3xl font-extrabold">TOP ARTISTS</p>
-      <div className="flex justify-between flex-col font-bold">
-        <div className="flex flex-row justify-center space-x-4 p-1 ">
+  return (
+    token && (
+      <div className="bg-my-red p-5 md:mx-40 min-w-600 ">
+        <p className="text-4xl font-semibold mb-5">TOP ARTISTS</p>
+        <div className="flex justify-between">
+        <div className="mb-8">
+          <p className=" text-xl mb-2"> Select a number of artists:</p>
+          <div className="flex flex-row space-x-4 p-1 ">
+            <label className="inline-flex items-center space-x-2 bg-my-dark rounded-full p-2 text-my-light">
+              <input
+                type="radio"
+                name="artistsNumber"
+                value="5"
+                checked={artistsNumber === 5}
+                onChange={() => setArtistsNumber(5)}
+                className="border rounded border-my-darks text-my-red font-bold w-6 h-6 "
+              />
+              <span>5</span>
+            </label>
+
+            <label className="inline-flex items-center space-x-2 bg-my-dark rounded-full p-2 text-my-light">
+              <input
+                type="radio"
+                name="artistsNumber"
+                value="10"
+                checked={artistsNumber === 10}
+                onChange={() => setArtistsNumber(10)}
+                className="border rounded border-my-blue text-my-blue font-bold w-7 h-7 text-base"
+              />
+              <span>10</span>
+            </label>
+
+            <label className="inline-flex items-center space-x-2 bg-my-dark rounded-full p-2 text-my-light">
+              <input
+                type="radio"
+                name="artistsNumber"
+                value="25"
+                checked={artistsNumber === 25}
+                onChange={() => setArtistsNumber(25)}
+                className="border rounded border-my-blue text-my-blue font-bold w-7 h-7 text-base"
+              />
+              <span>25</span>
+            </label>
+
+            <label className="inline-flex items-center space-x-2 bg-my-dark rounded-full p-2 text-my-light">
+              <input
+                type="radio"
+                name="artistsNumber"
+                value="50"
+                checked={artistsNumber === 50}
+                onChange={() => setArtistsNumber(50)}
+                className="border rounded border-my-blue text-my-blue font-bold w-7 h-7 text-base"
+              />
+              <span>50</span>
+            </label>
+          </div>
+          <p className=" text-xl mb-2 mt-5"> Select a period of time:</p>
+          <div className="flex flex-row space-x-4 p-1 ">
+            <label className="inline-flex items-center space-x-2 bg-my-dark rounded-full p-2 text-my-light">
+              <input
+                type="radio"
+                name="period"
+                value="short_term"
+                checked={period === "short_term"}
+                onChange={() => {
+                  setPeriod("short_term");
+                  setDisplayPeriod("from last month");
+                }}
+                className="border rounded border-my-blue text-my-blue font-bold w-7 h-7 text-base"
+              />
+              <span>1 Month</span>
+            </label>
+
+            <label className="inline-flex items-center space-x-2 bg-my-dark rounded-full p-2 text-my-light">
+              <input
+                type="radio"
+                name="period"
+                value="medium_term"
+                checked={period === "medium_term"}
+                onChange={() => {
+                  setPeriod("medium_term");
+                  setDisplayPeriod("from 6 months");
+                }}
+                className="border rounded border-my-blue text-my-blue font-bold w-7 h-7 text-base"
+              />
+              <span>6 Months</span>
+            </label>
+
+            <label className="inline-flex items-center space-x-2 bg-my-dark rounded-full p-2 text-my-light">
+              <input
+                type="radio"
+                name="period"
+                value="long_term"
+                checked={period === "long_term"}
+                onChange={() => {
+                  setPeriod("long_term");
+                  setDisplayPeriod("of all time");
+                }}
+                className="border rounded border-my-blue text-my-blue font-bold w-7 h-7 text-base"
+              />
+              <span>Of all time</span>
+            </label>
+          </div>
+        </div>
+        <div className="flex justify-evenly flex-col p-5">
+          <p className="text-2xl font-semibold p-1">
+            Show Top {artistsNumber} artists {displayPeriod}!
+          </p>
           <button
-            onClick={() => setArtistsNumber(5)}
-            className="border rounded border-my-blue text-my-blue font-bold w-7 h-7 text-base"
+            className=" p-3 rounded-full bg-my-dark font-bold text-my-green hover:bg-my-darker border-2"
+            onClick={() => setDataIfToken(token)}
           >
-            5
-          </button>
-          <button
-            onClick={() => setArtistsNumber(10)}
-            className="border rounded border-my-blue text-my-blue font-bold w-7 h-7 text-base"
-          >
-            10
-          </button>
-          <button
-            onClick={() => setArtistsNumber(25)}
-            className="border rounded border-my-blue text-my-blue font-bold w-7 h-7 text-base"
-          >
-            25
-          </button>
-          <button
-            onClick={() => setArtistsNumber(50)}
-            className="border rounded border-my-blue text-my-blue font-bold w-7 h-7 text-base"
-          >
-            50
+            Show {type}
           </button>
         </div>
-        <div className="flex flex-row justify-center space-x-4 p-1">
-          <button
-            onClick={() => {
-              setPeriod("short_term");
-              setDisplayPeriod("from last month");
-            }}
-            className="border rounded border-my-blue text-my-blue font-bold text-base p-1"
-          >
-            1 Month
-          </button>
-          <button
-            onClick={() => {
-              setPeriod("medium_term");
-              setDisplayPeriod("from  6 months");
-            }}
-            className="border rounded border-my-blue text-my-blue font-bold text-base p-1"
-          >
-            6 Months
-          </button>
-          <button
-            onClick={() => {
-              setPeriod("long_term");
-              setDisplayPeriod("of all time");
-            }}
-            className="border rounded border-my-blue text-my-blue font-bold text-base p-1"
-          >
-            Of all time
-          </button>
         </div>
-      </div>
-      <p className="text-2xl font-bold p-1">
-        Show Top {artistsNumber} artists {displayPeriod}!
-      </p>
-      <button 
-      className=" p-3 border rounded-full bg-my-green font-bold text-my-yellow" 
-      onClick={()=>setDataIfToken(token)} 
-     >
-        Show top {type}
-      </button>
-      {artists && artists.items.map((val,key)=>{
-        return <Artist profile={val} id={key} key={key} />
-      })}
-    </div>
-  ))
+        <div className="flex flex-row flex-wrap space-x-10 space-y-5 justify-evenly">
+        {artists &&
+          artists.items.map((val, index) => {
+            return <Artist profile={val} id={index} key={index} index={index}/>;
+          })}
+      </div></div>
+    )
+  );
 }
 
 export default TopArtists;

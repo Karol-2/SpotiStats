@@ -49,7 +49,7 @@ function PopularityTaste() {
 
   return (
     token && (
-      <div className="bg-my-yellow p-5 md:mx-40 min-w-600 rounded-md">
+      <div className="bg-my-green p-5 md:mx-40 min-w-600 rounded-md">
         <p className="text-3xl font-extrabold">POPULARITY TASTE</p>
         <BarChart aggregatedData={chartData()}></BarChart>
         <button onClick={() => setSelectedArtists(select(100, 91))}>

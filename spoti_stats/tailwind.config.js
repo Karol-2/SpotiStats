@@ -14,7 +14,7 @@ module.exports = {
       "my-green": "#00DFA2",
       "my-dark":"#21262D",
       "my-darker":"#121519",
-      "my-light":"EDE9E9",
+      "my-light":"#EDE9E9",
 
     },
     extend: {},
