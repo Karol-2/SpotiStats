@@ -14,7 +14,7 @@ async function redirectToAuthCodeFlow(clientId) {
   params.append("redirect_uri", "http://localhost:3000/callback");
   params.append(
     "scope",
-    "user-read-private user-read-email user-top-read user-library-read playlist-modify-private"
+    "user-read-private user-top-read playlist-modify-private"
   );
   params.append("code_challenge_method", "S256");
   params.append("code_challenge", challenge);
