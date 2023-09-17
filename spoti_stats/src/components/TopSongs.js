@@ -4,7 +4,7 @@ import Song from "./Song";
 
 function TopArtists() {
   const [songsNumber, setSongsNumber] = useState(5);
-  const [period, setPeriod] = useState("short_term");
+  const [periodSong, setPeriodSong] = useState("short_term");
   const [displayPeriod, setDisplayPeriod] = useState("from last month");
   const [songs, setSongs] = useState(null);
 
@@ -21,7 +21,7 @@ function TopArtists() {
 
   async function fetchTracks(token) {
     const result = await fetch(
-      `https://api.spotify.com/v1/me/top/${type}?time_range=${period}&limit=${songsNumber}`,
+      `https://api.spotify.com/v1/me/top/${type}?time_range=${periodSong}&limit=${songsNumber}`,
       {
         method: "GET",
         headers: { Authorization: `Bearer ${token}` },
@@ -98,11 +98,11 @@ function TopArtists() {
                 <label className="inline-flex items-center space-x-2 bg-my-dark rounded-full p-2 text-my-light">
                   <input
                     type="radio"
-                    name="period"
+                    name="period song"
                     value="short_term"
-                    checked={period === "short_term"}
+                    checked={periodSong === "short_term"}
                     onChange={() => {
-                      setPeriod("short_term");
+                      setPeriodSong("short_term");
                       setDisplayPeriod("from last month");
                     }}
                     className="border rounded border-my-blue text-my-blue font-bold w-7 h-7 text-base"
@@ -113,11 +113,11 @@ function TopArtists() {
                 <label className="inline-flex items-center space-x-2 bg-my-dark rounded-full p-2 text-my-light">
                   <input
                     type="radio"
-                    name="period"
+                    name="period song"
                     value="medium_term"
-                    checked={period === "medium_term"}
+                    checked={periodSong === "medium_term"}
                     onChange={() => {
-                      setPeriod("medium_term");
+                      setPeriodSong("medium_term");
                       setDisplayPeriod("from 6 months");
                     }}
                     className="border rounded border-my-blue text-my-blue font-bold w-7 h-7 text-base"
@@ -128,11 +128,11 @@ function TopArtists() {
                 <label className="inline-flex items-center space-x-2 bg-my-dark rounded-full p-2 text-my-light">
                   <input
                     type="radio"
-                    name="period"
+                    name="period song"
                     value="long_term"
-                    checked={period === "long_term"}
+                    checked={periodSong === "long_term"}
                     onChange={() => {
-                      setPeriod("long_term");
+                      setPeriodSong("long_term");
                       setDisplayPeriod("of all time");
                     }}
                     className="border rounded border-my-blue text-my-blue font-bold w-7 h-7 text-base"

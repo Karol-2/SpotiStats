@@ -13,3 +13,8 @@ Features checklist:
 - [X]  styling
 - [X]  cool background
 - [ ]  responsive page for mobiles
+- [ ]  darkmode
+- [ ]  logo
+- [ ]  icons
+- [ ]  recommendaction refresh button
+- [ ]  change scrollbar

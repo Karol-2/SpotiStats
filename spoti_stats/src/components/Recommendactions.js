@@ -68,7 +68,7 @@ function Recommendactions() {
       <div className="bg-my-red p-5 md:mx-40 min-w-600 shadow-2xl m-10 rounded-xl ">
         <p className="text-4xl font-semibold mb-5">RECOMMENDACTIONS</p>
         <div className="flex justify-around">
-          <div>
+          <div className=" p-5 rounded-xl border-my-dark border-8">
             <p className="  text-2xl">
               Here are 5 tracks based on your recent listening:
             </p>
