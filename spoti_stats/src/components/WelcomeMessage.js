@@ -26,7 +26,7 @@ function WelcomeMessage() {
   }
 
   return (
-    <div className=" md:mx-40 min-w-600 flex justify-center text-my-dark bg-my-green rounded-b-lg shadow-2xl">
+    <div className=" md:mx-40 min-w-600 flex justify-center text-my-dark background-animation rounded-b-lg shadow-2xl">
       {profile ? (
         <div className="min-w-full flex flex-col p-5">
           <p className=" text-2xl text-left mt-5 mb-8 font-semibold">

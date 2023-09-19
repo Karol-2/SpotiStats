@@ -28,6 +28,6 @@ const Playlist = ({ songs }) => {
           );
         })}
     </div>
-  ); //TODO: zmień pasek boczny
+  ); 
 };
 export default Playlist;

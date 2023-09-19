@@ -46,8 +46,8 @@ function App() {
 
   return (
     <TokenContext.Provider value={accessToken}>
-      <div className="App" > 
-      <div className="background-animation" >
+      <div className=" bg-my-light" > 
+      
       <LoginPanel clientId={clientId}> </LoginPanel>
         <WelcomeMessage></WelcomeMessage>
         <TopArtists></TopArtists>
@@ -56,7 +56,7 @@ function App() {
         <Recommendactions></Recommendactions>
         <PopularityTaste></PopularityTaste>
         <PrivacyPolicy></PrivacyPolicy>
-      </div>
+      
        
       </div>
     </TokenContext.Provider>

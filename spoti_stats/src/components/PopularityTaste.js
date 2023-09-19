@@ -50,7 +50,7 @@ function PopularityTaste() {
 
   return (
     token && (
-      <div className="bg-my-green p-5 md:mx-40 min-w-600 shadow-2xl m-10 rounded-xl">
+      <div className="background-animation p-5 md:mx-40 min-w-600 shadow-2xl m-10 rounded-xl">
         <p className="text-4xl font-semibold mb-5 text-center">
           POPULARITY TASTE
         </p>
