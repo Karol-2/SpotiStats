@@ -23,7 +23,7 @@ To run SpotiStats locally and make modifications, follow these steps:
 
 1. Clone this repository to your local machine:
     ```shell
-   git clone https://github.com/your-username/spotistats.git
+   git clone https://github.com/Karol-2/SpotiStats.git
    ```
 2. Change directory to the project folder:
     ```shell
