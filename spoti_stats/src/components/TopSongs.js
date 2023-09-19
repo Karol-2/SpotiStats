@@ -32,9 +32,12 @@ function TopArtists() {
   }
   return (
     token && (
+      
       <div className="background-animation-green p-5 md:mx-40 min-w-600 shadow-2xl m-10 rounded-xl  ">
         <div className="flex ">
           <div className=" w-1/2 p-4">
+          {console.log(songs)}
+
             <div className="h-full">
               {songs ? (
                 songs.items.map((val, key) => {
