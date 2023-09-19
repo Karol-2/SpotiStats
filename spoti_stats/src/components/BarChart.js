@@ -53,7 +53,7 @@ export function BarChart({ aggregatedData }) {
       {
         label: "Amount",
         data: aggregatedData,
-        backgroundColor: "#0079FF",
+        backgroundColor: "#E24480",
         borderColor:["#21262D"],
       },
     ],

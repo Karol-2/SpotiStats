@@ -70,31 +70,31 @@ function PopularityTaste() {
         <div className="flex flex-row justify-evenly mb-3">
           <button
             onClick={() => setSelectedArtists(select(100, 91))}
-            className="bg-my-blue p-2 rounded-3xl hover:bg-my-dark text-my-light font-bold"
+            className="bg-my-red p-2 rounded-3xl hover:bg-my-dark text-my-light font-bold"
           >
             100 - 91
           </button>
           <button
             onClick={() => setSelectedArtists(select(90, 81))}
-            className="bg-my-blue p-2 rounded-3xl hover:bg-my-dark text-my-light font-bold"
+            className="bg-my-red p-2 rounded-3xl hover:bg-my-dark text-my-light font-bold"
           >
             90 - 81
           </button>
           <button
             onClick={() => setSelectedArtists(select(80, 71))}
-            className="bg-my-blue p-2 rounded-3xl hover:bg-my-dark text-my-light font-bold"
+            className="bg-my-red p-2 rounded-3xl hover:bg-my-dark text-my-light font-bold"
           >
             80 - 71
           </button>
           <button
             onClick={() => setSelectedArtists(select(70, 61))}
-            className="bg-my-blue p-2 rounded-3xl hover:bg-my-dark text-my-light font-bold"
+            className="bg-my-red p-2 rounded-3xl hover:bg-my-dark text-my-light font-bold"
           >
             70 - 61
           </button>
           <button
             onClick={() => setSelectedArtists(select(60, 51))}
-            className="bg-my-blue p-2 rounded-3xl hover:bg-my-dark text-my-light font-bold"
+            className="bg-my-red p-2 rounded-3xl hover:bg-my-dark text-my-light font-bold"
           >
             60 - 51
           </button>
@@ -102,31 +102,31 @@ function PopularityTaste() {
         <div className="flex flex-row justify-evenly mt-3">
           <button
             onClick={() => setSelectedArtists(select(50, 41))}
-            className="bg-my-blue p-2 rounded-3xl hover:bg-my-dark text-my-light font-bold"
+            className="bg-my-red p-2 rounded-3xl hover:bg-my-dark text-my-light font-bold"
           >
             50 - 41
           </button>
           <button
             onClick={() => setSelectedArtists(select(40, 31))}
-            className="bg-my-blue p-2 rounded-3xl hover:bg-my-dark text-my-light font-bold"
+            className="bg-my-red p-2 rounded-3xl hover:bg-my-dark text-my-light font-bold"
           >
             40 - 31
           </button>
           <button
             onClick={() => setSelectedArtists(select(30, 21))}
-            className="bg-my-blue p-2 rounded-3xl hover:bg-my-dark text-my-light font-bold"
+            className="bg-my-red p-2 rounded-3xl hover:bg-my-dark text-my-light font-bold"
           >
             30 - 21
           </button>
           <button
             onClick={() => setSelectedArtists(select(20, 11))}
-            className="bg-my-blue p-2 rounded-3xl hover:bg-my-dark text-my-light font-bold"
+            className="bg-my-red p-2 rounded-3xl hover:bg-my-dark text-my-light font-bold"
           >
             20 - 11
           </button>
           <button
             onClick={() => setSelectedArtists(select(10, 0))}
-            className="bg-my-blue p-2 rounded-3xl hover:bg-my-dark text-my-light font-bold"
+            className="bg-my-red p-2 rounded-3xl hover:bg-my-dark text-my-light font-bold"
           >
             10 - 0
           </button>
