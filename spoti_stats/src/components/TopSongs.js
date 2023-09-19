@@ -32,7 +32,7 @@ function TopArtists() {
   }
   return (
     token && (
-      <div className="background-animation p-5 md:mx-40 min-w-600 shadow-2xl m-10 rounded-xl  ">
+      <div className="background-animation-green p-5 md:mx-40 min-w-600 shadow-2xl m-10 rounded-xl  ">
         <div className="flex ">
         <div className=" w-1/2 p-4">
             {songs &&
@@ -52,7 +52,7 @@ function TopArtists() {
                     value="5"
                     checked={songsNumber === 5}
                     onChange={() => setSongsNumber(5)}
-                    className="border rounded border-my-darks text-my-red font-bold w-6 h-6 "
+                    className="border-my-dark text-my-red font-bold w-6 h-6 checked:bg-my-green"
                   />
                   <span>TOP 5</span>
                 </label>
@@ -64,7 +64,7 @@ function TopArtists() {
                     value="10"
                     checked={songsNumber === 10}
                     onChange={() => setSongsNumber(10)}
-                    className="border rounded border-my-blue text-my-blue font-bold w-7 h-7 text-base"
+                    className="border-my-dark text-my-red font-bold w-6 h-6 checked:bg-my-green"
                   />
                   <span>TOP 10</span>
                 </label>
@@ -76,7 +76,7 @@ function TopArtists() {
                     value="25"
                     checked={songsNumber === 25}
                     onChange={() => setSongsNumber(25)}
-                    className="border rounded border-my-blue text-my-blue font-bold w-7 h-7 text-base"
+                    className="border-my-dark text-my-red font-bold w-6 h-6 checked:bg-my-green"
                   />
                   <span>TOP 25</span>
                 </label>
@@ -88,7 +88,7 @@ function TopArtists() {
                     value="50"
                     checked={songsNumber === 50}
                     onChange={() => setSongsNumber(50)}
-                    className="border rounded border-my-blue text-my-blue font-bold w-7 h-7 text-base"
+                    className="border-my-dark text-my-red font-bold w-6 h-6 checked:bg-my-green"
                   />
                   <span>TOP 50</span>
                 </label>
@@ -105,7 +105,7 @@ function TopArtists() {
                       setPeriodSong("short_term");
                       setDisplayPeriod("from last month");
                     }}
-                    className="border rounded border-my-blue text-my-blue font-bold w-7 h-7 text-base"
+                    className="border-my-dark text-my-red font-bold w-6 h-6 checked:bg-my-green"
                   />
                   <span>1 Month</span>
                 </label>
@@ -120,7 +120,7 @@ function TopArtists() {
                       setPeriodSong("medium_term");
                       setDisplayPeriod("from 6 months");
                     }}
-                    className="border rounded border-my-blue text-my-blue font-bold w-7 h-7 text-base"
+                    className="border-my-dark text-my-red font-bold w-6 h-6 checked:bg-my-green"
                   />
                   <span>6 Months</span>
                 </label>
@@ -135,7 +135,7 @@ function TopArtists() {
                       setPeriodSong("long_term");
                       setDisplayPeriod("of all time");
                     }}
-                    className="border rounded border-my-blue text-my-blue font-bold w-7 h-7 text-base"
+                    className="border-my-dark text-my-red font-bold w-6 h-6 checked:bg-my-green"
                   />
                   <span>Of all time</span>
                 </label>

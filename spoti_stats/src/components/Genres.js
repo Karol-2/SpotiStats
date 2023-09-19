@@ -44,9 +44,9 @@ function Genres() {
   }
   return (
     token && (
-      <div className="bg-my-red p-5 md:mx-40 min-w-600 shadow-2xl m-10 rounded-xl">
+      <div className="background-animation-red p-5 md:mx-40 min-w-600 shadow-2xl m-10 rounded-xl">
         <p className="text-4xl font-semibold mb-5 text-center">GENRES</p>
-        <div className="flex text-center">
+        <div className="flex text-center space-x-1">
           <div className="w-1/2 p-4 bg-my-dark rounded-2xl">
             <p className="text-2xl font-semibold text-my-green">
               Top genres from last year

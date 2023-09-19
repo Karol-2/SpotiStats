@@ -8,7 +8,7 @@ function LoginPanel({ clientId }) {
   return (
     <>
       {!token ? (
-        <div className="background-animation  md:mx-40 min-w-600 text-my-dark rounded-b-lg shadow-2xl h-full">
+        <div className="background-animation-green  md:mx-40 min-w-600 text-my-dark rounded-b-lg shadow-2xl h-full">
           <div className=" p-5 md:mx-40 min-w-600 rounded-md justify-between">
             <p className=" text-2xl text-left mt-5 mb-8 font-semibold">
               SpotiStats

@@ -24,4 +24,3 @@ function Song({ song }) {
 }
 
 export default Song;
-//TODO: napraw , w artystach
