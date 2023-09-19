@@ -47,7 +47,7 @@ function TopArtists() {
                   onChange={() => setArtistsNumber(5)}
                   className="border rounded border-my-darks text-my-red font-bold w-6 h-6 "
                 />
-                <span> 5</span>
+                <span>TOP 5</span>
               </label>
 
               <label className="inline-flex items-center space-x-2 bg-my-dark rounded-full p-2 text-my-light">
@@ -59,7 +59,7 @@ function TopArtists() {
                   onChange={() => setArtistsNumber(10)}
                   className="border rounded border-my-blue text-my-blue font-bold w-7 h-7 text-base"
                 />
-                <span>10</span>
+                <span>TOP 10</span>
               </label>
 
               <label className="inline-flex items-center space-x-2 bg-my-dark rounded-full p-2 text-my-light">
@@ -71,7 +71,7 @@ function TopArtists() {
                   onChange={() => setArtistsNumber(25)}
                   className="border rounded border-my-blue text-my-blue font-bold w-7 h-7 text-base"
                 />
-                <span>25</span>
+                <span>TOP 25</span>
               </label>
 
               <label className="inline-flex items-center space-x-2 bg-my-dark rounded-full p-2 text-my-light">
@@ -83,11 +83,11 @@ function TopArtists() {
                   onChange={() => setArtistsNumber(50)}
                   className="border rounded border-my-blue text-my-blue font-bold w-7 h-7 text-base"
                 />
-                <span>50</span>
+                <span>TOP 50</span>
               </label>
             </div>
             <p className=" text-xl mb-2 mt-5"> Select a period of time:</p>
-            <div className="flex flex-row space-x-4 p-1 ">
+            <div className="flex flex-row space-x-4 justify-around p-1 ">
               <label className="inline-flex items-center space-x-2 bg-my-dark rounded-full p-2 text-my-light">
                 <input
                   type="radio"

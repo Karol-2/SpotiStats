@@ -9,7 +9,7 @@ Features checklist:
 - [X]  recomendactions (playlist)
 - [ ]  creating playlist with your most listened ever songs (button)
 - [X]  a chart that shows artists and their popularity, it shows how many artists do you listen in each bracketsof popoularity (panel)
-- [ ]  deploy online
+- [X]  deploy online
 - [X]  styling
 - [X]  cool background
 - [ ]  responsive page for mobiles
