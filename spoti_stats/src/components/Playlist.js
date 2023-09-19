@@ -2,7 +2,7 @@ import React from "react";
 
 const Playlist = ({ songs }) => {
   return (
-    <div className="w-90 h-60 overflow-auto border border-gray-300 bg-my-darker p-4">
+    <div className="w-90 h-60 overflow-auto border border-gray-300  ">
       <p className="text-my-green font-bold text-xl">Check Those Out!</p>
       {songs &&
         songs.map((song, key) => {

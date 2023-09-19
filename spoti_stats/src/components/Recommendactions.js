@@ -107,13 +107,13 @@ function Recommendactions() {
             </div>
             {!playlistCreated && (
               <button
-                className=" p-3 rounded-full bg-my-dark font-bold text-my-green hover:bg-my-darker border-2 mr-8 ml-8"
+                className=" p-3 rounded-full bg-my-dark font-bold text-my-green hover:bg-my-darker border-2 mr-8 ml-8 space-x-1 flex justify-center items-center"
                 onClick={() => {
                   iniciatePlaylist();
                   setPlaylistCreated(true);
                 }}
               >
-                Create a playlist
+               <p>Create a playlist</p> 
                 <FontAwesomeIcon icon={faArrowCircleRight} />
               </button>
             )}
