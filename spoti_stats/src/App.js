@@ -46,7 +46,7 @@ function App() {
 
   return (
     <TokenContext.Provider value={accessToken}>
-      <div className=" bg-my-light text-my-dark" > 
+      <div className=" bg-my-light text-my-dark min-h-screen" > 
       
       <LoginPanel clientId={clientId}> </LoginPanel>
         <WelcomeMessage></WelcomeMessage>
