@@ -59,42 +59,42 @@ function PopularityTaste() {
           close to a 100 are more popular, those closer to 0 are less popular.
           Check how obscure is your music taste!
         </p>
-        <div className=" bg-my-light p-2 rounded-xl">
+        <div className=" bg-my-light p-2 rounded-xl max-w-screen-md flex justify-center m-auto">
           <BarChart aggregatedData={chartData()}></BarChart>
         </div>
-
+        <div className="bg-my-green p-3 rounded-xl m-3">
         <hr className=" mt-3 mb-3"></hr>
-        <p className="text-xl mb-5 text-center">
+        <p className="text-xl mb-5 text-center text-my-dark">
           You can also check which artists are within certain brackets.
         </p>
         <div className="flex flex-row justify-evenly mb-3">
           <button
             onClick={() => setSelectedArtists(select(100, 91))}
-            className="bg-my-green p-2 rounded-3xl hover:bg-my-dark text-my-red font-bold"
+            className="bg-my-red p-2 rounded-3xl hover:bg-my-dark text-my-green font-bold"
           >
             100 - 91
           </button>
           <button
             onClick={() => setSelectedArtists(select(90, 81))}
-            className="bg-my-green p-2 rounded-3xl hover:bg-my-dark text-my-red font-bold"
+            className="bg-my-red p-2 rounded-3xl hover:bg-my-dark text-my-green font-bold"
           >
             90 - 81
           </button>
           <button
             onClick={() => setSelectedArtists(select(80, 71))}
-            className="bg-my-green p-2 rounded-3xl hover:bg-my-dark text-my-red font-bold"
+            className="bg-my-red p-2 rounded-3xl hover:bg-my-dark text-my-green font-bold"
           >
             80 - 71
           </button>
           <button
             onClick={() => setSelectedArtists(select(70, 61))}
-            className="bg-my-green p-2 rounded-3xl hover:bg-my-dark text-my-red font-bold"
+            className="bg-my-red p-2 rounded-3xl hover:bg-my-dark text-my-green font-bold"
           >
             70 - 61
           </button>
           <button
             onClick={() => setSelectedArtists(select(60, 51))}
-            className="bg-my-green p-2 rounded-3xl hover:bg-my-dark text-my-red font-bold"
+            className="bg-my-red p-2 rounded-3xl hover:bg-my-dark text-my-green font-bold"
           >
             60 - 51
           </button>
@@ -102,38 +102,40 @@ function PopularityTaste() {
         <div className="flex flex-row justify-evenly mt-3">
           <button
             onClick={() => setSelectedArtists(select(50, 41))}
-            className="bg-my-green p-2 rounded-3xl hover:bg-my-dark text-my-red font-bold"
+            className="bg-my-red p-2 rounded-3xl hover:bg-my-dark text-my-green font-bold"
           >
             50 - 41
           </button>
           <button
             onClick={() => setSelectedArtists(select(40, 31))}
-            className="bg-my-green p-2 rounded-3xl hover:bg-my-dark text-my-red font-bold"
+            className="bg-my-red p-2 rounded-3xl hover:bg-my-dark text-my-green font-bold"
           >
             40 - 31
           </button>
           <button
             onClick={() => setSelectedArtists(select(30, 21))}
-            className="bg-my-green p-2 rounded-3xl hover:bg-my-dark text-my-red font-bold"
+            className="bg-my-red p-2 rounded-3xl hover:bg-my-dark text-my-green font-bold"
           >
             30 - 21
           </button>
           <button
             onClick={() => setSelectedArtists(select(20, 11))}
-            className="bg-my-green p-2 rounded-3xl hover:bg-my-dark text-my-red font-bold"
+            className="bg-my-red p-2 rounded-3xl hover:bg-my-dark text-my-green font-bold"
           >
             20 - 11
           </button>
           <button
             onClick={() => setSelectedArtists(select(10, 0))}
-            className="bg-my-green p-2 rounded-3xl hover:bg-my-dark text-my-red font-bold"
+            className="bg-my-red p-2 rounded-3xl hover:bg-my-dark text-my-green font-bold"
           >
             10 - 0
           </button>
-        </div>
+          </div>
+       
         <hr className=" mt-3 mb-3"></hr>
+        </div>
         {selectedArtists && (
-          <p className="text-xl font-thin mt-5 mv-5 text-center">
+          <p className="text-xl font-thin mt-5 mb-5 text-center">
             Total artists: {selectedArtists.length}
           </p>
         )}

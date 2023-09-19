@@ -2,7 +2,6 @@ import generateCodeChallenge from "./generateCodeChallenge";
 import generateCodeVerifier from "./generateCodeVerifier";
 
 async function redirectToAuthCodeFlow(clientId) {
-  console.log(clientId);
   const verifier = generateCodeVerifier(128);
   const challenge = await generateCodeChallenge(verifier);
 

@@ -25,7 +25,6 @@ export function BarChart({ aggregatedData }) {
     plugins: {
       legend: {
         position: "top",
-        
       },
       title: {
         display: true,
@@ -54,13 +53,9 @@ export function BarChart({ aggregatedData }) {
         label: "Amount",
         data: aggregatedData,
         backgroundColor: "#00DFA2",
-        borderColor:["#21262D"],
+        borderColor: ["#21262D"],
       },
     ],
   };
-  return (
-    <div>
-      <Bar options={options} data={data} />
-    </div>
-  );
+  return <Bar options={options} data={data} />;
 }
