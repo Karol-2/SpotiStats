@@ -24,6 +24,9 @@ function WelcomeMessage() {
 
     return await result.json();
   }
+  function isPremium(profile){
+    return profile.product === "premium"
+  }
 
   return (
     <div className=" md:mx-40 min-w-600 flex justify-center text-my-dark background-animation-green rounded-b-lg shadow-2xl">
@@ -40,7 +43,8 @@ function WelcomeMessage() {
               href={profile.external_urls.spotify}
               id="displayName"
               className=" place-self-center m-3 text-3xl text-my-green"
-              target="_blank" rel="noreferrer noopener"
+              target="_blank"
+              rel="noreferrer noopener"
             >
               {profile.display_name}
             </a>
@@ -55,6 +59,9 @@ function WelcomeMessage() {
               />
             )}
           </div>
+          {profile && !isPremium(profile)&& (
+            <p className=" text-center font-extrabold">It seems that you are a non-premium Spotify user. Some content might not work properly!</p>
+          )}
         </div>
       ) : (
         <></>
