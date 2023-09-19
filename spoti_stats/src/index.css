@@ -48,12 +48,26 @@
 
   .background-animation{
     z-index: 1;
-    background: linear-gradient(-45deg, rgb(242, 242, 242), rgb(220, 220, 220), rgb(175, 175, 175), rgb(0, 0, 0));
+    /* background: linear-gradient(-45deg, rgb(242, 242, 242), rgb(220, 220, 220), rgb(175, 175, 175), rgb(0, 0, 0)); */
     /* background: linear-gradient(-45deg, red, green, blue, yellow); */
-    /* background: linear-gradient(-45deg, rgb(226,68,128), rgb(0,223,162), rgb(0,121,255), rgb(246,250,112)); */
-   
+    background: linear-gradient(-45deg,rgb(226,68,128), rgb(3,202,149)); 
+    /* background: linear-gradient(-45deg,rgb(240, 73, 137),rgb(221, 20, 97) );  */
     background-size: 400%,400%;
-    animation: animateGradient 17s ease infinite
+    animation: animateGradient 15s ease infinite
+  }
+
+  .background-animation-red{
+    z-index: 1;
+    background: linear-gradient(-45deg,rgb(226,68,128),rgb(209, 10, 86) ); 
+    background-size: 400%,400%;
+    animation: animateGradient 7s ease infinite
+  }
+
+  .background-animation-green{
+    z-index: 1;
+    background: linear-gradient(-45deg,rgb(3,202,149),rgb(2, 141, 111));
+    background-size: 400%,400%;
+    animation: animateGradient 7s ease infinite
   }
 
   
@@ -62,7 +76,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #888; 
+  background-color: #00DFA2; 
   border-radius: 5px; 
 }
 

@@ -69,10 +69,10 @@ function Recommendactions() {
 
   return (
     token && (
-      <div className="bg-my-red p-5 md:mx-40 min-w-600 shadow-2xl m-10 rounded-xl ">
+      <div className="background-animation-green p-5 md:mx-40 min-w-600 shadow-2xl m-10 rounded-xl ">
         <p className="text-4xl font-semibold mb-5">RECOMMENDACTIONS</p>
-        <div className="flex justify-around">
-          <div className=" p-5 rounded-xl border-my-dark border-8">
+        <div className="flex justify-around space-x-1">
+          <div className=" p-5 rounded-xl border-my-dark border-8 bg-my-dark text-my-red">
             <p className="  text-2xl">
               Here are 5 tracks based on your recent listening:
             </p>
@@ -107,13 +107,13 @@ function Recommendactions() {
             </div>
             {!playlistCreated && (
               <button
-                className=" p-3 rounded-full bg-my-dark font-bold text-my-green hover:bg-my-darker border-2 mr-8 ml-8"
+                className=" p-3 rounded-full bg-my-dark font-bold text-my-green hover:bg-my-darker border-2 mr-8 ml-8 space-x-1 flex justify-center items-center"
                 onClick={() => {
                   iniciatePlaylist();
                   setPlaylistCreated(true);
                 }}
               >
-                Create a playlist
+               <p>Create a playlist</p> 
                 <FontAwesomeIcon icon={faArrowCircleRight} />
               </button>
             )}

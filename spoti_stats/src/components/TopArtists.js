@@ -32,63 +32,63 @@ function TopArtists() {
   }
   return (
     token && (
-      <div className="bg-my-red p-5 md:mx-40 min-w-600 shadow-2xl m-10 rounded-xl">
+      <div className="background-animation-red p-5 md:mx-40 min-w-600 shadow-2xl m-10 rounded-xl">
         <p className="text-4xl font-semibold mb-5">TOP ARTISTS</p>
         <div className="flex justify-between space-x-5">
           <div className="mb-8">
             <p className=" text-xl mb-2"> Select a number of artists:</p>
             <div className="flex flex-row space-x-4 p-1 ">
-              <label className="inline-flex items-center  bg-my-dark rounded-full p-2 text-my-light">
+              <label className="inline-flex items-center  bg-my-dark rounded-full p-2 text-my-light transform hover:scale-110">
                 <input
                   type="radio"
                   name="artistsNumber"
                   value="5"
                   checked={artistsNumber === 5}
                   onChange={() => setArtistsNumber(5)}
-                  className="border rounded border-my-darks text-my-red font-bold w-6 h-6 "
+                  className="border-my-dark text-my-red font-bold w-6 h-6 checked:bg-my-green"
                 />
                 <span>TOP 5</span>
               </label>
 
-              <label className="inline-flex items-center space-x-2 bg-my-dark rounded-full p-2 text-my-light">
+              <label className="inline-flex items-center space-x-2 bg-my-dark rounded-full p-2 text-my-light transform hover:scale-110 ">
                 <input
                   type="radio"
                   name="artistsNumber"
                   value="10"
                   checked={artistsNumber === 10}
                   onChange={() => setArtistsNumber(10)}
-                  className="border rounded border-my-blue text-my-blue font-bold w-7 h-7 text-base"
+                  className="border-my-dark text-my-red font-bold w-6 h-6 checked:bg-my-green "
                 />
                 <span>TOP 10</span>
               </label>
 
-              <label className="inline-flex items-center space-x-2 bg-my-dark rounded-full p-2 text-my-light">
+              <label className="inline-flex items-center space-x-2 bg-my-dark rounded-full p-2 text-my-light transform hover:scale-110">
                 <input
                   type="radio"
                   name="artistsNumber"
                   value="25"
                   checked={artistsNumber === 25}
                   onChange={() => setArtistsNumber(25)}
-                  className="border rounded border-my-blue text-my-blue font-bold w-7 h-7 text-base"
+                  className="border-my-dark text-my-red font-bold w-6 h-6 checked:bg-my-green"
                 />
                 <span>TOP 25</span>
               </label>
 
-              <label className="inline-flex items-center space-x-2 bg-my-dark rounded-full p-2 text-my-light">
+              <label className="inline-flex items-center space-x-2 bg-my-dark rounded-full p-2 text-my-light transform hover:scale-110">
                 <input
                   type="radio"
                   name="artistsNumber"
                   value="50"
                   checked={artistsNumber === 50}
                   onChange={() => setArtistsNumber(50)}
-                  className="border rounded border-my-blue text-my-blue font-bold w-7 h-7 text-base"
+                  className="border-my-dark text-my-red font-bold w-6 h-6 checked:bg-my-green"
                 />
                 <span>TOP 50</span>
               </label>
             </div>
             <p className=" text-xl mb-2 mt-5"> Select a period of time:</p>
             <div className="flex flex-row space-x-4 justify-around p-1 ">
-              <label className="inline-flex items-center space-x-2 bg-my-dark rounded-full p-2 text-my-light">
+              <label className="inline-flex items-center space-x-2 bg-my-dark rounded-full p-2 text-my-light transform hover:scale-110">
                 <input
                   type="radio"
                   name="period"
@@ -98,12 +98,12 @@ function TopArtists() {
                     setPeriod("short_term");
                     setDisplayPeriod("from last month");
                   }}
-                  className="border rounded border-my-blue text-my-blue font-bold w-7 h-7 text-base"
+                  className="border-my-dark text-my-red font-bold w-6 h-6 checked:bg-my-green"
                 />
                 <span>1 Month</span>
               </label>
 
-              <label className="inline-flex items-center space-x-2 bg-my-dark rounded-full p-2 text-my-light">
+              <label className="inline-flex items-center space-x-2 bg-my-dark rounded-full p-2 text-my-light transform hover:scale-110">
                 <input
                   type="radio"
                   name="period"
@@ -113,12 +113,12 @@ function TopArtists() {
                     setPeriod("medium_term");
                     setDisplayPeriod("from 6 months");
                   }}
-                  className="border rounded border-my-blue text-my-blue font-bold w-7 h-7 text-base"
+                  className="border-my-dark text-my-red font-bold w-6 h-6 checked:bg-my-green"
                 />
                 <span>6 Months</span>
               </label>
 
-              <label className="inline-flex items-center space-x-2 bg-my-dark rounded-full p-2 text-my-light">
+              <label className="inline-flex items-center space-x-2 bg-my-dark rounded-full p-2 text-my-light transform hover:scale-110">
                 <input
                   type="radio"
                   name="period"
@@ -128,7 +128,7 @@ function TopArtists() {
                     setPeriod("long_term");
                     setDisplayPeriod("of all time");
                   }}
-                  className="border rounded border-my-blue text-my-blue font-bold w-7 h-7 text-base"
+                  className="border-my-dark text-my-red font-bold w-6 h-6 checked:bg-my-green"
                 />
                 <span>Of all time</span>
               </label>
