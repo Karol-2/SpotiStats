@@ -69,7 +69,7 @@ function Genres() {
             </ul>
           </div>
 
-          <div className="lg:w-1/2 lg:p-4 bg-my-green rounded-2xl transition-transform transform hover:scale-110">
+          <div className="lg:w-1/2 lg:p-4 bg-my-green rounded-2xl transition-transform transform hover:scale-105">
             <p className="text-2xl font-semibold text-my-dark">
               Top genres of all time
             </p>
