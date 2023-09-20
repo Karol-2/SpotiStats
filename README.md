@@ -12,6 +12,7 @@ You can access a live demo of SpotiStats by visiting the following link: [SpotiS
 - **Music Genres:** Discover your favorite music genres based on your listening history.
 - **Recommendations:** Get music recommendations based on your listening preferences.
 - **Playlist Creation:** Create playlists using recommended songs.
+- **Top 50 All-Time:** See your top 50 most frequently played songs of all time and save them to a Spotify playlist.
 - **User-friendly UI:** Built with React, Tailwind CSS, and Font Awesome for an intuitive and visually appealing user interface. The website features a dynamic dark mode that adapts to the user's browser settings, providing a comfortable viewing experience in low-light environments.
 - **Mobile Responsiveness:** The application is fully responsive, ensuring a seamless and user-friendly experience on various mobile devices, including smartphones and tablets.
 - **Data Visualization:** Utilizes Chart.js for data visualization.
@@ -42,11 +43,3 @@ To run SpotiStats locally and make modifications, follow these steps:
 
 ## License
 SpotiStats is licensed under the GPL-3.0 License. See the LICENSE file for details
-
-
-
-## Future features checklist:
-- [ ]  creating playlist with your most listened ever songs (new panel)
-- [X]  responsive page for mobiles
-- [X]  darkmode
-- [X]  logo
