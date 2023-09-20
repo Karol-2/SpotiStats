@@ -33,10 +33,9 @@ function TopArtists() {
   return (
     token && (
       
-      <div className="background-animation-green p-5 md:mx-40 min-w-600 shadow-2xl m-10 rounded-xl  ">
-        <div className="flex ">
-          <div className=" w-1/2 p-4">
-          {console.log(songs)}
+      <div className="background-animation-green p-5 md:mx-40 min-w-600 shadow-2xl mt-2 mb-2 md:m-10 rounded-xl  ">
+        <div className="flex flex-col-reverse lg:flex-row ">
+          <div className=" lg:w-1/2 lg:p-4">
 
             <div className="h-full">
               {songs ? (
@@ -51,7 +50,7 @@ function TopArtists() {
               )}
             </div>
           </div>
-          <div className="mb-8 w-1/2 p-4 text-center">
+          <div className="lg:mb-8 lg:w-1/2 p-4 text-center">
             <p className="text-4xl font-semibold mb-5">TOP TRACKS</p>
             <div className="flex justify-center flex-col">
               <p className=" text-xl mb-2"> Select a number of artists:</p>

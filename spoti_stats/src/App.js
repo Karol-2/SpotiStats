@@ -30,8 +30,8 @@ function App() {
     params.append("client_id", clientId);
     params.append("grant_type", "authorization_code");
     params.append("code", code);
-    //params.append("redirect_uri", "http://localhost:3000/callback");
-    params.append("redirect_uri", "https://spotistats-ai97.onrender.com/callback");
+    params.append("redirect_uri", "http://localhost:3000/callback");
+    // params.append("redirect_uri", "https://spotistats-ai97.onrender.com/callback");
     params.append("code_verifier", verifier);
 
     const result = await fetch("https://accounts.spotify.com/api/token", {
@@ -46,7 +46,7 @@ function App() {
 
   return (
     <TokenContext.Provider value={accessToken}>
-      <div className=" bg-my-light text-my-dark min-h-screen" > 
+      <div className=" bg-my-light text-my-dark min-h-screen dark:bg-my-dark" > 
       
       <LoginPanel clientId={clientId}> </LoginPanel>
         <WelcomeMessage></WelcomeMessage>

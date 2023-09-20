@@ -21,6 +21,7 @@ ChartJS.register(
 
 export function BarChart({ aggregatedData }) {
   const options = {
+    
     responsive: true,
     plugins: {
       legend: {
