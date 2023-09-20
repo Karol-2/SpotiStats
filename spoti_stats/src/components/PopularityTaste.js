@@ -1,8 +1,8 @@
-import { useState, useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { TokenContext } from "../contexts/TokenContext";
 import fetchWebApi from "../helper/fetchWebApi";
-import { BarChart } from "./BarChart";
 import Artist from "./Artist";
+import { BarChart } from "./BarChart";
 
 function PopularityTaste() {
   const [artists, setArtists] = useState(null);
@@ -22,7 +22,7 @@ function PopularityTaste() {
       );
       setArtists(profiles.items);
       chartData();
-    } else console.log("token not found");
+    };
   }
   function select(max, min) {
     const inRange = [];
@@ -63,76 +63,76 @@ function PopularityTaste() {
           <BarChart aggregatedData={chartData()}></BarChart>
         </div>
         <div className="bg-my-green p-3 rounded-xl m-3">
-        <hr className=" mt-3 mb-3"></hr>
-        <p className="text-xl mb-5 text-center text-my-dark">
-          You can also check which artists are within certain brackets.
-        </p>
-        <div className="flex flex-row justify-evenly mb-3">
-          <button
-            onClick={() => setSelectedArtists(select(100, 91))}
-            className="bg-my-red p-2 rounded-3xl hover:bg-my-dark text-my-green font-bold"
-          >
-            100 - 91
-          </button>
-          <button
-            onClick={() => setSelectedArtists(select(90, 81))}
-            className="bg-my-red p-2 rounded-3xl hover:bg-my-dark text-my-green font-bold"
-          >
-            90 - 81
-          </button>
-          <button
-            onClick={() => setSelectedArtists(select(80, 71))}
-            className="bg-my-red p-2 rounded-3xl hover:bg-my-dark text-my-green font-bold"
-          >
-            80 - 71
-          </button>
-          <button
-            onClick={() => setSelectedArtists(select(70, 61))}
-            className="bg-my-red p-2 rounded-3xl hover:bg-my-dark text-my-green font-bold"
-          >
-            70 - 61
-          </button>
-          <button
-            onClick={() => setSelectedArtists(select(60, 51))}
-            className="bg-my-red p-2 rounded-3xl hover:bg-my-dark text-my-green font-bold"
-          >
-            60 - 51
-          </button>
-        </div>
-        <div className="flex flex-row justify-evenly mt-3">
-          <button
-            onClick={() => setSelectedArtists(select(50, 41))}
-            className="bg-my-red p-2 rounded-3xl hover:bg-my-dark text-my-green font-bold"
-          >
-            50 - 41
-          </button>
-          <button
-            onClick={() => setSelectedArtists(select(40, 31))}
-            className="bg-my-red p-2 rounded-3xl hover:bg-my-dark text-my-green font-bold"
-          >
-            40 - 31
-          </button>
-          <button
-            onClick={() => setSelectedArtists(select(30, 21))}
-            className="bg-my-red p-2 rounded-3xl hover:bg-my-dark text-my-green font-bold"
-          >
-            30 - 21
-          </button>
-          <button
-            onClick={() => setSelectedArtists(select(20, 11))}
-            className="bg-my-red p-2 rounded-3xl hover:bg-my-dark text-my-green font-bold"
-          >
-            20 - 11
-          </button>
-          <button
-            onClick={() => setSelectedArtists(select(10, 0))}
-            className="bg-my-red p-2 rounded-3xl hover:bg-my-dark text-my-green font-bold"
-          >
-            10 - 0
-          </button>
+          <hr className=" mt-3 mb-3"></hr>
+          <p className="text-xl mb-5 text-center text-my-dark">
+            You can also check which artists are within certain brackets.
+          </p>
+          <div className="flex flex-row justify-evenly mb-3">
+            <button
+              onClick={() => setSelectedArtists(select(100, 91))}
+              className="bg-my-red p-2 rounded-3xl hover:bg-my-dark text-my-green font-bold"
+            >
+              100 - 91
+            </button>
+            <button
+              onClick={() => setSelectedArtists(select(90, 81))}
+              className="bg-my-red p-2 rounded-3xl hover:bg-my-dark text-my-green font-bold"
+            >
+              90 - 81
+            </button>
+            <button
+              onClick={() => setSelectedArtists(select(80, 71))}
+              className="bg-my-red p-2 rounded-3xl hover:bg-my-dark text-my-green font-bold"
+            >
+              80 - 71
+            </button>
+            <button
+              onClick={() => setSelectedArtists(select(70, 61))}
+              className="bg-my-red p-2 rounded-3xl hover:bg-my-dark text-my-green font-bold"
+            >
+              70 - 61
+            </button>
+            <button
+              onClick={() => setSelectedArtists(select(60, 51))}
+              className="bg-my-red p-2 rounded-3xl hover:bg-my-dark text-my-green font-bold"
+            >
+              60 - 51
+            </button>
           </div>
-       
-        <hr className=" mt-3 mb-3"></hr>
+          <div className="flex flex-row justify-evenly mt-3">
+            <button
+              onClick={() => setSelectedArtists(select(50, 41))}
+              className="bg-my-red p-2 rounded-3xl hover:bg-my-dark text-my-green font-bold"
+            >
+              50 - 41
+            </button>
+            <button
+              onClick={() => setSelectedArtists(select(40, 31))}
+              className="bg-my-red p-2 rounded-3xl hover:bg-my-dark text-my-green font-bold"
+            >
+              40 - 31
+            </button>
+            <button
+              onClick={() => setSelectedArtists(select(30, 21))}
+              className="bg-my-red p-2 rounded-3xl hover:bg-my-dark text-my-green font-bold"
+            >
+              30 - 21
+            </button>
+            <button
+              onClick={() => setSelectedArtists(select(20, 11))}
+              className="bg-my-red p-2 rounded-3xl hover:bg-my-dark text-my-green font-bold"
+            >
+              20 - 11
+            </button>
+            <button
+              onClick={() => setSelectedArtists(select(10, 0))}
+              className="bg-my-red p-2 rounded-3xl hover:bg-my-dark text-my-green font-bold"
+            >
+              10 - 0
+            </button>
+          </div>
+
+          <hr className=" mt-3 mb-3"></hr>
         </div>
         {selectedArtists && (
           <p className="text-xl font-thin mt-5 mb-5 text-center">
@@ -142,7 +142,7 @@ function PopularityTaste() {
         <div className="flex flex-row flex-wrap space-x-10 space-y-5 justify-evenly">
           {selectedArtists &&
             selectedArtists.map((person, key) => {
-              return <Artist profile={person} index={key} />;
+              return <Artist profile={person} index={key} key={person.id} />;
             })}
         </div>
       </div>

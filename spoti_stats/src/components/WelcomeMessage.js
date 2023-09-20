@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { TokenContext } from "../contexts/TokenContext";
+import fetchWebApi from "../helper/fetchWebApi";
 
 function WelcomeMessage() {
   const [profile, setProfile] = useState(null);
@@ -11,21 +12,13 @@ function WelcomeMessage() {
 
   async function setProfileIfToken(token) {
     if (profile === null) {
-      const profile = await fetchProfile(token);
+      const profile = await fetchWebApi(token, "me", "GET");
       setProfile(profile);
     }
   }
 
-  async function fetchProfile(token) {
-    const result = await fetch("https://api.spotify.com/v1/me", {
-      method: "GET",
-      headers: { Authorization: `Bearer ${token}` },
-    });
-
-    return await result.json();
-  }
-  function isPremium(profile){
-    return profile.product === "premium"
+  function isPremium(profile) {
+    return profile.product === "premium";
   }
 
   return (
@@ -59,8 +52,11 @@ function WelcomeMessage() {
               />
             )}
           </div>
-          {profile && !isPremium(profile)&& (
-            <p className=" text-center font-extrabold">It seems that you are a non-premium Spotify user. Some content might not work properly!</p>
+          {profile && !isPremium(profile) && (
+            <p className=" text-center font-extrabold">
+              It seems that you are a non-premium Spotify user. Some content
+              might not work properly!
+            </p>
           )}
         </div>
       ) : (

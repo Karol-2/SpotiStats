@@ -1,6 +1,6 @@
 function PrivacyPolicy() {
   return (
-    <footer className=" text-center p-5 md:mx-40 min-w-600 rounded-md dark:text-my-light " >
+    <footer className=" text-center p-5 md:mx-40 min-w-600 rounded-md dark:text-my-light ">
       <p>Privacy Policy</p>
       <p className=" font-thin text-sm">
         SpotiStats was developed as an open source app powered by the Spotify

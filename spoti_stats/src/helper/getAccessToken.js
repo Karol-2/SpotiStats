@@ -1,6 +1,8 @@
 async function getAccessToken(clientId, code) {
   const verifier = localStorage.getItem("verifier");
-  const redirectUri = process.env.REDIRECT_URI ? process.env.REDIRECT_URI: "http://localhost:3000/callback" ;
+  const redirectUri = process.env.REDIRECT_URI
+    ? process.env.REDIRECT_URI
+    : "http://localhost:3000/callback";
 
   const params = new URLSearchParams();
   params.append("client_id", clientId);

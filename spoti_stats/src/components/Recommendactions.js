@@ -35,7 +35,7 @@ function Recommendactions() {
         "GET"
       );
       setRecommendactions(res.tracks);
-    } else console.log("token not found");
+    };
   }
 
   async function iniciatePlaylist() {
@@ -110,6 +110,7 @@ function Recommendactions() {
               className=" p-3 rounded-full bg-my-dark font-bold text-my-green hover:bg-my-darker border-2 mr-8 ml-8 space-x-1 flex justify-center items-center"
               onClick={() => {
                 setRecomIfToken(token);
+                setPlaylistCreated(false);
               }}
             >
               <p>Refresh</p> <FontAwesomeIcon icon={faRefresh} />
