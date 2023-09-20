@@ -1,9 +1,11 @@
 import React from "react";
 
-const Playlist = ({ songs }) => {
+const Playlist = (props) => {
+  const name = props.name
+  const songs = props.songs
   return (
     <div className="w-90 h-60 overflow-auto border border-gray-300  ">
-      <p className="text-my-green font-bold text-xl">Check Those Out!</p>
+      <p className="text-my-green font-bold text-xl">{name}</p>
       {songs &&
         songs.map((song, key) => {
           return (

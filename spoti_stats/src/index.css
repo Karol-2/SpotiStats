@@ -48,10 +48,7 @@
 
   .background-animation{
     z-index: 1;
-    /* background: linear-gradient(-45deg, rgb(242, 242, 242), rgb(220, 220, 220), rgb(175, 175, 175), rgb(0, 0, 0)); */
-    /* background: linear-gradient(-45deg, red, green, blue, yellow); */
     background: linear-gradient(-45deg,rgb(226,68,128), rgb(3,202,149)); 
-    /* background: linear-gradient(-45deg,rgb(240, 73, 137),rgb(221, 20, 97) );  */
     background-size: 400%,400%;
     animation: animateGradient 15s ease infinite
   }

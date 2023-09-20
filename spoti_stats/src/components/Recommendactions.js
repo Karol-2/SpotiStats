@@ -1,13 +1,14 @@
-import { useState, useContext } from "react";
-import { TokenContext } from "../contexts/TokenContext";
-import getUris from "../helper/getUris";
-import fetchWebApi from "../helper/fetchWebApi";
-import Playlist from "./Playlist";
 import {
-  faRefresh,
   faArrowCircleRight,
+  faRefresh,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useContext, useState } from "react";
+import { TokenContext } from "../contexts/TokenContext";
+import createPlaylist from "../helper/createPlaylist.js";
+import fetchWebApi from "../helper/fetchWebApi";
+import getUris from "../helper/getUris";
+import Playlist from "./Playlist";
 
 function Recommendactions() {
   const [recommendations, setRecommendactions] = useState(null);
@@ -40,33 +41,14 @@ function Recommendactions() {
   async function iniciatePlaylist() {
     if (recommendations) {
       const tracks = await getUris(recommendations);
-      const createdPlaylist = await createPlaylist(tracks);
-      console.log(createdPlaylist.name, createdPlaylist.id);
+      const createdPlaylist = await createPlaylist(
+        tracks,
+        token,
+        "Check Those Out!",
+        "Playlist of recommended songs based on your recent favourite tracks, xoxo ~SpotiStats"
+      );
+      console.log(createdPlaylist.name, " created");
     }
-  }
-
-  async function createPlaylist(tracksUri) {
-    const { id: user_id } = await fetchWebApi(token, "me", "GET");
-
-    const playlist = await fetchWebApi(
-      token,
-      `users/${user_id}/playlists`,
-      "POST",
-      {
-        name: "Check Those Out!",
-        description:
-          "Playlist of recommended songs based on your recent favourite tracks, xoxo ~SpotiStats",
-        public: false,
-      }
-    );
-
-    await fetchWebApi(
-      token,
-      `playlists/${playlist.id}/tracks?uris=${tracksUri.join(",")}`,
-      "POST"
-    );
-
-    return playlist;
   }
 
   return (
@@ -107,7 +89,10 @@ function Recommendactions() {
 
           <div className="flex flex-col content-between space-y-3">
             <div className="bg-my-dark p-3 rounded-xl">
-              <Playlist songs={recommendations}></Playlist>
+              <Playlist
+                songs={recommendations}
+                name="Check Those Out!"
+              ></Playlist>
             </div>
             {!playlistCreated && (
               <button
