@@ -21,7 +21,7 @@ ChartJS.register(
 
 export function BarChart({ aggregatedData }) {
   const options = {
-    maintainAspectRatio:false,
+    
     responsive: true,
     plugins: {
       legend: {

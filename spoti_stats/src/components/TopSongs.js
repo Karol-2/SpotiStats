@@ -33,7 +33,7 @@ function TopArtists() {
   return (
     token && (
       
-      <div className="background-animation-green p-5 md:mx-40 min-w-600 shadow-2xl mt-2 mb-2 lg:m-10 rounded-xl  ">
+      <div className="background-animation-green p-5 md:mx-40 min-w-600 shadow-2xl mt-2 mb-2 md:m-10 rounded-xl  ">
         <div className="flex flex-col-reverse lg:flex-row ">
           <div className=" lg:w-1/2 lg:p-4">
 

@@ -31,8 +31,8 @@ function TopArtists() {
     return await result.json();
   }
   return (
-    token && (/*   text-my-dark background-animation-green rounded-b-lg shadow-2xl */
-      <div className="background-animation-red p-5 md:mx-40 min-w-600 shadow-2xl mt-2 mb-2 lg:m-10 rounded-xl">
+    token && (/*   <div className="  flex justify-center text-my-dark background-animation-green rounded-b-lg shadow-2xl"> */
+      <div className="background-animation-red p-5 md:mx-40 min-w-600 shadow-2xl mt-2 mb-2 md:m-10 rounded-xl">
         <p className="text-4xl font-semibold mb-5">TOP ARTISTS</p>
         <div className="flex justify-between space-x-5 flex-col lg:flex-row">
           <div className="mb-8">
