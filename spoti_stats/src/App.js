@@ -1,5 +1,6 @@
 import Genres from "./components/Genres";
 import LoginPanel from "./components/LoginPanel";
+import MostListenedSongs from "./components/MostListenedSongs";
 import PopularityTaste from "./components/PopularityTaste";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import Recommendactions from "./components/Recommendactions";
@@ -55,6 +56,7 @@ function App() {
         <Genres></Genres>
         <Recommendactions></Recommendactions>
         <PopularityTaste></PopularityTaste>
+        <MostListenedSongs />
         <PrivacyPolicy></PrivacyPolicy>
       
        
