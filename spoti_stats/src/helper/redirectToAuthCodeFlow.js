@@ -4,7 +4,7 @@ import generateCodeVerifier from "./generateCodeVerifier";
 async function redirectToAuthCodeFlow(clientId) {
   const verifier = generateCodeVerifier(128);
   const challenge = await generateCodeChallenge(verifier);
-  const redirectUri = process.env.REDIRECT_URI ? process.env.REDIRECT_URI: "http://localhost:3000/callback" ;
+  const redirectUri = process.env.REACT_APP_REDIRECT_URI ? process.env.REACT_APP_REDIRECT_URI: "http://localhost:3000/callback" ;
   console.log("wszystkie",process.env)
   console.log("to",process.env.REDIRECT_URI)
   console.log("redir", redirectUri)
