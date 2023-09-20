@@ -9,11 +9,11 @@ function LoginPanel({ clientId }) {
     <>
       {!token ? (
         <div className="background-animation-green  md:mx-40 min-w-600 text-my-dark rounded-b-lg shadow-2xl h-full">
-          <div className=" p-5 md:mx-40 min-w-600 rounded-md justify-between">
+          <div className=" p-5 lg:mx-40 min-w-600 rounded-md justify-between">
             <p className=" text-2xl text-left mt-5 mb-8 font-semibold">
               SpotiStats
             </p>
-            <p className=" text-7xl text-left opacity-0 animate-fade-in">
+            <p className=" text-5xl md:text-7xl text-left opacity-0 animate-fade-in">
               WELCOME TO YOUR DATA-SAVVY MUSIC PARADISE
             </p>
 
