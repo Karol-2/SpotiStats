@@ -1,6 +1,6 @@
-import redirectToAuthCodeFlow from "../helper/redirectToAuthCodeFlow";
 import { useContext } from "react";
 import { TokenContext } from "../contexts/TokenContext";
+import redirectToAuthCodeFlow from "../helper/redirectToAuthCodeFlow";
 
 function LoginPanel({ clientId }) {
   const token = useContext(TokenContext);

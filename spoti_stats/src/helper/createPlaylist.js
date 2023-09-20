@@ -1,15 +1,14 @@
 import fetchWebApi from "./fetchWebApi";
 
-async function createPlaylist(tracksUri, token, name, desc) {
+async function createPlaylist(tracksUri, token, name, description) {
   const { id: user_id } = await fetchWebApi(token, "me", "GET");
-
   const playlist = await fetchWebApi(
     token,
     `users/${user_id}/playlists`,
     "POST",
     {
       name: name,
-      description: desc,
+      description: description,
       public: false,
     }
   );

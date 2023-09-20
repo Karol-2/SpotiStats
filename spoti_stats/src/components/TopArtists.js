@@ -1,5 +1,6 @@
-import { useState, useContext } from "react";
+import { useContext, useState } from "react";
 import { TokenContext } from "../contexts/TokenContext";
+import fetchWebApi from "../helper/fetchWebApi";
 import Artist from "./Artist";
 
 function TopArtists() {
@@ -14,24 +15,13 @@ function TopArtists() {
 
   async function setDataIfToken(token) {
     if (token) {
-      const profile = await fetchArtists(token);
+      const profile = await fetchWebApi(token,`me/top/${type}?time_range=${period}&limit=${artistsNumber}`,"GET");
       setArtists(profile);
-    } else console.log("token not found");
+    };
   }
 
-  async function fetchArtists(token) {
-    const result = await fetch(
-      `https://api.spotify.com/v1/me/top/${type}?time_range=${period}&limit=${artistsNumber}`,
-      {
-        method: "GET",
-        headers: { Authorization: `Bearer ${token}` },
-      }
-    );
-
-    return await result.json();
-  }
   return (
-    token && (/*   <div className="  flex justify-center text-my-dark background-animation-green rounded-b-lg shadow-2xl"> */
+    token /*   <div className="  flex justify-center text-my-dark background-animation-green rounded-b-lg shadow-2xl"> */ && (
       <div className="background-animation-red p-5 md:mx-40 min-w-600 shadow-2xl mt-2 mb-2 md:m-10 rounded-xl">
         <p className="text-4xl font-semibold mb-5">TOP ARTISTS</p>
         <div className="flex justify-between space-x-5 flex-col lg:flex-row">

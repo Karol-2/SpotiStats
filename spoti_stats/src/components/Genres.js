@@ -1,6 +1,7 @@
-import { useState, useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { TokenContext } from "../contexts/TokenContext";
 import aggregateGeneres from "../helper/aggregateGeneres";
+import fetchWebApi from "../helper/fetchWebApi";
 
 function Genres() {
   const [mediumArtists, setMediumArtists] = useState(null);
@@ -24,24 +25,21 @@ function Genres() {
 
   async function setDataIfToken(token) {
     if (token) {
-      const fromLastYear = await fetchArtists(token, "medium_term");
+      const fromLastYear = await fetchWebApi(
+        token,
+        "me/top/artists?time_range=medium_term&limit=50",
+        "GET"
+      );
       setMediumArtists(fromLastYear.items);
-      const allTime = await fetchArtists(token, "long_term");
+      const allTime = await fetchWebApi(
+        token,
+        "me/top/artists?time_range=long_term&limit=50",
+        "GET"
+      );
       setLongArtists(allTime.items);
-    } else console.log("token not found");
+    }
   }
 
-  async function fetchArtists(token, period) {
-    const result = await fetch(
-      `https://api.spotify.com/v1/me/top/artists?time_range=${period}&limit=50`,
-      {
-        method: "GET",
-        headers: { Authorization: `Bearer ${token}` },
-      }
-    );
-
-    return await result.json();
-  }
   return (
     token && (
       <div className="background-animation-red p-5 md:mx-40 min-w-600 shadow-2xl mt-2 mb-2 md:m-10 rounded-xl">

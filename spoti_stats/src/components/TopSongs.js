@@ -1,5 +1,6 @@
-import { useState, useContext } from "react";
+import { useContext, useState } from "react";
 import { TokenContext } from "../contexts/TokenContext";
+import fetchWebApi from "../helper/fetchWebApi";
 import Song from "./Song";
 
 function TopArtists() {
@@ -14,29 +15,20 @@ function TopArtists() {
 
   async function setDataIfToken(token) {
     if (token) {
-      const profile = await fetchTracks(token);
-      setSongs(profile);
-    } else console.log("token not found");
+      const fetchedSongs = await fetchWebApi(
+        token,
+        `me/top/${type}?time_range=${periodSong}&limit=${songsNumber}`,
+        "GET"
+      );
+      setSongs(fetchedSongs);
+    }
   }
 
-  async function fetchTracks(token) {
-    const result = await fetch(
-      `https://api.spotify.com/v1/me/top/${type}?time_range=${periodSong}&limit=${songsNumber}`,
-      {
-        method: "GET",
-        headers: { Authorization: `Bearer ${token}` },
-      }
-    );
-
-    return await result.json();
-  }
   return (
     token && (
-      
       <div className="background-animation-green p-5 md:mx-40 min-w-600 shadow-2xl mt-2 mb-2 md:m-10 rounded-xl  ">
         <div className="flex flex-col-reverse lg:flex-row ">
           <div className=" lg:w-1/2 lg:p-4">
-
             <div className="h-full">
               {songs ? (
                 songs.items.map((val, key) => {
@@ -44,9 +36,8 @@ function TopArtists() {
                 })
               ) : (
                 <div className="flex items-center justify-center h-full  text-2xl opacity-50">
-                <p>Your tracks will be shown here</p>
-              </div>
-              
+                  <p>Your tracks will be shown here</p>
+                </div>
               )}
             </div>
           </div>

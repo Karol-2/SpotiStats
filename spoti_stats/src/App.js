@@ -21,16 +21,14 @@ function App() {
     const code = params.get("code");
 
     if (code) {
-      prepareToken(code)
+      prepareToken(code);
     }
   }, []);
 
-  async function prepareToken(code){
+  async function prepareToken(code) {
     const token = await getAccessToken(clientId, code);
     setAccessToken(token);
   }
-
- 
 
   return (
     <TokenContext.Provider value={accessToken}>
