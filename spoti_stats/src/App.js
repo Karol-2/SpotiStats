@@ -1,3 +1,4 @@
+import React, { useContext, useEffect, useState } from "react";
 import Genres from "./components/Genres";
 import LoginPanel from "./components/LoginPanel";
 import MostListenedSongs from "./components/MostListenedSongs";
@@ -8,7 +9,7 @@ import TopArtists from "./components/TopArtists";
 import TopSongs from "./components/TopSongs";
 import WelcomeMessage from "./components/WelcomeMessage";
 import { TokenContext } from "./contexts/TokenContext";
-import React, { useEffect, useState, useContext } from "react";
+import getAccessToken from "./helper/getAccessToken";
 
 const clientId = "c2345cf62ae34942aba348fb3ae730e3";
 
@@ -20,36 +21,21 @@ function App() {
     const code = params.get("code");
 
     if (code) {
-      getAccessToken(clientId, code);
+      prepareToken(code)
     }
   }, []);
 
-  async function getAccessToken(clientId, code) {
-    const verifier = localStorage.getItem("verifier");
-
-    const params = new URLSearchParams();
-    params.append("client_id", clientId);
-    params.append("grant_type", "authorization_code");
-    params.append("code", code);
-    params.append("redirect_uri", "http://localhost:3000/callback");
-    // params.append("redirect_uri", "https://spotistats-ai97.onrender.com/callback");
-    params.append("code_verifier", verifier);
-
-    const result = await fetch("https://accounts.spotify.com/api/token", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: params,
-    });
-
-    const { access_token } = await result.json();
-    setAccessToken(access_token);
+  async function prepareToken(code){
+    const token = await getAccessToken(clientId, code);
+    setAccessToken(token);
   }
+
+ 
 
   return (
     <TokenContext.Provider value={accessToken}>
-      <div className=" bg-my-light text-my-dark min-h-screen dark:bg-my-dark flex-col justify-between" > 
-      
-      <LoginPanel clientId={clientId}> </LoginPanel>
+      <div className=" bg-my-light text-my-dark min-h-screen dark:bg-my-dark flex-col justify-between">
+        <LoginPanel clientId={clientId}> </LoginPanel>
         <WelcomeMessage></WelcomeMessage>
         <TopArtists></TopArtists>
         <TopSongs></TopSongs>
@@ -58,8 +44,6 @@ function App() {
         <PopularityTaste></PopularityTaste>
         <MostListenedSongs />
         <PrivacyPolicy></PrivacyPolicy>
-      
-       
       </div>
     </TokenContext.Provider>
   );
