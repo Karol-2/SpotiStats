@@ -49,4 +49,4 @@ SpotiStats is licensed under the GPL-3.0 License. See the LICENSE file for detai
 - [ ]  creating playlist with your most listened ever songs (new panel)
 - [X]  responsive page for mobiles
 - [X]  darkmode
-- [ ]  logo
+- [X]  logo
