@@ -31,13 +31,13 @@ function TopArtists() {
     return await result.json();
   }
   return (
-    token && (
-      <div className="background-animation-red p-5 md:mx-40 min-w-600 shadow-2xl m-10 rounded-xl">
+    token && (/*   text-my-dark background-animation-green rounded-b-lg shadow-2xl */
+      <div className="background-animation-red p-5 md:mx-40 min-w-600 shadow-2xl mt-2 mb-2 lg:m-10 rounded-xl">
         <p className="text-4xl font-semibold mb-5">TOP ARTISTS</p>
-        <div className="flex justify-between space-x-5">
+        <div className="flex justify-between space-x-5 flex-col lg:flex-row">
           <div className="mb-8">
             <p className=" text-xl mb-2"> Select a number of artists:</p>
-            <div className="flex flex-row space-x-4 p-1 ">
+            <div className="flex flex-row space-x-4 justify-evenly p-1 self-center flex-wrap">
               <label className="inline-flex items-center  bg-my-dark rounded-full p-2 text-my-light transform hover:scale-110">
                 <input
                   type="radio"
@@ -87,7 +87,7 @@ function TopArtists() {
               </label>
             </div>
             <p className=" text-xl mb-2 mt-5"> Select a period of time:</p>
-            <div className="flex flex-row space-x-4 justify-around p-1 ">
+            <div className="flex flex-row space-x-4  justify-evenly p-1 self-center flex-wrap">
               <label className="inline-flex items-center space-x-2 bg-my-dark rounded-full p-2 text-my-light transform hover:scale-110">
                 <input
                   type="radio"
@@ -146,7 +146,7 @@ function TopArtists() {
             </button>
           </div>
         </div>
-        <div className="flex flex-row flex-wrap space-x-10 space-y-5 justify-evenly">
+        <div className="flex flex-row flex-wrap space-x-10 space-y-5 justify-around lg:justify-evenly">
           {artists &&
             artists.items.map((val, index) => {
               return (

@@ -44,10 +44,10 @@ function Genres() {
   }
   return (
     token && (
-      <div className="background-animation-red p-5 md:mx-40 min-w-600 shadow-2xl m-10 rounded-xl">
+      <div className="background-animation-red p-5 md:mx-40 min-w-600 shadow-2xl mt-2 mb-2 lg:m-10 rounded-xl">
         <p className="text-4xl font-semibold mb-5 text-center">GENRES</p>
-        <div className="flex text-center space-x-1">
-          <div className="w-1/2 p-4 bg-my-dark rounded-2xl transition-transform transform hover:scale-105">
+        <div className="flex text-center space-x-1 flex-col lg:flex-row">
+          <div className="lg:w-1/2 lg:p-4 mb-3 bg-my-dark rounded-2xl transition-transform transform hover:scale-105">
             <p className="text-2xl font-semibold text-my-green">
               Top genres from last year
             </p>
@@ -69,7 +69,7 @@ function Genres() {
             </ul>
           </div>
 
-          <div className="w-1/2 p-4 bg-my-green rounded-2xl transition-transform transform hover:scale-110">
+          <div className="lg:w-1/2 lg:p-4 bg-my-green rounded-2xl transition-transform transform hover:scale-110">
             <p className="text-2xl font-semibold text-my-dark">
               Top genres of all time
             </p>

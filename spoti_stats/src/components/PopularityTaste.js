@@ -50,7 +50,7 @@ function PopularityTaste() {
 
   return (
     token && (
-      <div className="background-animation-red p-5 md:mx-40 min-w-600 shadow-2xl m-10 rounded-xl">
+      <div className="background-animation-red p-5 md:mx-40 min-w-600 shadow-2xl mt-2 mb-2 lg:m-10 rounded-xl">
         <p className="text-4xl font-semibold mb-5 text-center">
           POPULARITY TASTE
         </p>
@@ -59,7 +59,7 @@ function PopularityTaste() {
           close to a 100 are more popular, those closer to 0 are less popular.
           Check how obscure is your music taste!
         </p>
-        <div className=" bg-my-light p-2 rounded-xl max-w-screen-md flex justify-center m-auto">
+        <div className=" bg-my-light p-2 rounded-xl max-w-screen-md flex justify-center m-auto ">
           <BarChart aggregatedData={chartData()}></BarChart>
         </div>
         <div className="bg-my-green p-3 rounded-xl m-3">

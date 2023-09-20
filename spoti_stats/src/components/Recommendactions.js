@@ -3,9 +3,11 @@ import { TokenContext } from "../contexts/TokenContext";
 import getUris from "../helper/getUris";
 import fetchWebApi from "../helper/fetchWebApi";
 import Playlist from "./Playlist";
-import { faRefresh, faArrowCircleRight } from "@fortawesome/free-solid-svg-icons";
+import {
+  faRefresh,
+  faArrowCircleRight,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 
 function Recommendactions() {
   const [recommendations, setRecommendactions] = useState(null);
@@ -69,9 +71,11 @@ function Recommendactions() {
 
   return (
     token && (
-      <div className="background-animation-green p-5 md:mx-40 min-w-600 shadow-2xl m-10 rounded-xl ">
-        <p className="text-4xl font-semibold mb-5">RECOMMENDACTIONS</p>
-        <div className="flex justify-around space-x-1">
+      <div className="background-animation-green p-5 md:mx-40 min-w-600 shadow-2xl mt-2 mb-2 lg:m-10 rounded-xl ">
+        <p className="lg:text-4xl text-2xl font-semibold mb-5">
+          RECOMMENDACTIONS
+        </p>
+        <div className="flex justify-around space-x-1 sm:flex-col lg:flex-row flex-col space-y-10">
           <div className=" p-5 rounded-xl border-my-dark border-8 bg-my-dark text-my-red">
             <p className="  text-2xl">
               Here are 5 tracks based on your recent listening:
@@ -113,17 +117,17 @@ function Recommendactions() {
                   setPlaylistCreated(true);
                 }}
               >
-               <p>Create a playlist</p> 
+                <p>Create a playlist</p>
                 <FontAwesomeIcon icon={faArrowCircleRight} />
               </button>
             )}
             <button
-              className=" p-3 rounded-full bg-my-dark font-bold text-my-green hover:bg-my-darker border-2 mr-32 ml-32"
+              className=" p-3 rounded-full bg-my-dark font-bold text-my-green hover:bg-my-darker border-2 mr-8 ml-8 space-x-1 flex justify-center items-center"
               onClick={() => {
                 setRecomIfToken(token);
               }}
             >
-              Refresh <FontAwesomeIcon icon={faRefresh} />
+              <p>Refresh</p> <FontAwesomeIcon icon={faRefresh} />
             </button>
           </div>
         </div>
